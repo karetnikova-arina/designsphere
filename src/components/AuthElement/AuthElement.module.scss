@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: start;
+}
+.title {
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 22px;
+}

@@ -1,0 +1,36 @@
+.input {
+  display: none;
+}
+.label {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  padding-left: 20px;
+  user-select: none;
+}
+.label:before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  left: 0;
+  bottom: 3px;
+  background: url("/RadioUnchecked.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.input:checked + label:before {
+  background: url('/RadioChecked.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.input:checked + .label {
+  color: var(--text-secondary-color)
+}
+

@@ -1,0 +1,42 @@
+.input {
+  display: none;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+}
+.label {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  padding-left: 20px;
+  user-select: none;
+  text-align: start;
+}
+.label:before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  left: 0;
+  top: 4px;
+  background: url("/CheckboxUnchecked.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.input:checked + label:before {
+  background: url('/CheckboxChecked.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.input:checked + .label {
+  color: var(--text-secondary-color)
+}
+
