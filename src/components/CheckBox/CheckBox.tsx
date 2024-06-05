@@ -1,13 +1,16 @@
 import style from "./CheckBox.module.scss"
 import {InputHTMLAttributes, ReactNode} from "react";
-export interface CheckBoxProps extends InputHTMLAttributes<HTMLInputElement>{
+
+export interface CheckBoxProps extends InputHTMLAttributes<HTMLInputElement> {
     children: ReactNode,
-    id: string
+    id: string,
+    setValue: () => void
 }
-export function CheckBox({children, id, ...props}: CheckBoxProps) {
+
+export function CheckBox({children, id, setValue, ...props}: CheckBoxProps) {
     return (
         <>
-            <input {...props} className={style.input} id={id} type="checkbox" name="check"/>
+            <input onChange={setValue} {...props} className={style.input} id={id} type="checkbox"/>
             <label className={style.label} htmlFor={id}>{children}</label>
         </>
     )

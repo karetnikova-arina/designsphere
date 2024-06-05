@@ -1,0 +1,125 @@
+.title {
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 32px;
+  color: var(--text-secondary-color);
+}
+
+.input {
+  div {
+    width: 500px;
+  }
+
+  input {
+  }
+
+  svg {
+    right: -100px;
+  }
+}
+
+.button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 4px 10px;
+  gap: 8px;
+  border-radius: 20px;
+  border: 1px solid var(--text-secondary-color);
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 24px;
+  color: var(--text-secondary-color);
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.image {
+  width: 226px;
+  height: 226px;
+  border-radius: 226px;
+}
+
+.inputs {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.element {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: start;
+
+  div:first-child {
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 22px;
+  }
+}
+
+.radio {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.create {
+  cursor: pointer;
+  margin-top: 20px;
+  padding: 4px 16px;
+  border-radius: 20px;
+  background-color: var(--text-secondary-color);
+  color: white;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 28px;
+  border: none;
+}
+
+.cancel {
+  cursor: pointer;
+  margin-top: 20px;
+  padding: 4px 16px;
+  border-radius: 20px;
+  border: 1px solid var(--text-secondary-color);
+  color: var(--text-secondary-color);
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 28px;
+  background: transparent;
+}
+
+.sort {
+  div {
+    position: static;
+  }
+}
+
+.sorts {
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 28px;
+  text-align: center;
+  margin-bottom: 10px;
+}

@@ -2,8 +2,10 @@ import style from "./Input.module.scss"
 import {InputProps} from "./InputProps.ts";
 import cn from "classnames"
 import {useEffect, useRef} from "react";
+import {ErrorMessage} from "../Error/Error.tsx";
 
-export function Input({isValid, hidden, ...props}: InputProps) {
+export function Input({isValid, hidden, value, ...props}: InputProps) {
+    console.log(props)
     const inputRef = useRef<HTMLInputElement>(null)
     useEffect(() => {
         if (inputRef && inputRef.current && inputRef.current.nodeName === 'INPUT') {
@@ -16,12 +18,10 @@ export function Input({isValid, hidden, ...props}: InputProps) {
     }, [hidden])
     return (
         <div className={style.container}>
-            <input autoComplete="off" ref={inputRef} className={cn(style.input, {
+            <input value={value} autoComplete="off" ref={inputRef} className={cn(style.input, {
                 [style.error]: !isValid
             })} {...props}/>
-            {!isValid && <div className={style.errorMessage}><img src="/error.png" alt="Ошибка"/>
-                <div>Error</div>
-            </div>}
+            {!isValid && <ErrorMessage text={value.length>0 ? "Error" : "Поле не заполнено"}/>}
         </div>
 
     )

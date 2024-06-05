@@ -1,0 +1,19 @@
+.button {
+  align-self: center;
+  padding: 8px 16px;
+  border-radius: 20px;
+  background-color: var(--text-secondary-color);
+  color: white;
+  border: none;
+  font-family: "Mulish", sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 28px;
+  cursor: pointer;
+}
+
+.inactive {
+  background-color: var(--inactive-color);
+}
+
+

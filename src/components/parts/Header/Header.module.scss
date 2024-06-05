@@ -1,0 +1,40 @@
+.logo {
+  height: 40px;
+  width: 80px;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--background-purpul);
+  box-sizing: border-box;
+  width: 100vw;
+  padding: 20px 111px;
+  gap: 20px;
+  a {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+  }
+  button {
+    padding: 6px 12px;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 24px;
+  }
+  input {
+    flex-grow: 3;
+  }
+}
+.userfich {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+.active {
+  color: var(--text-secondary-color);
+}
+.notification {
+  position: relative;
+}

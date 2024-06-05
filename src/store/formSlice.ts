@@ -10,7 +10,7 @@ export interface formState {
         email: boolean,
         tel: boolean,
         password: boolean,
-        repeatPassword: boolean,
+        repeatPassword: boolean
     },
     values: {
         name: string,
@@ -20,6 +20,7 @@ export interface formState {
         tel: string,
         password: string,
         repeatPassword: string,
+        person: string
     }
 }
 
@@ -41,15 +42,26 @@ const initialState: formState = {
         tel: "",
         password: "",
         repeatPassword: "",
+        person: "Работодатель"
+        //person: ""
     }
 }
+
 const formSlice = createSlice({
     name: 'form',
     initialState,
     reducers: {
         addValue: (state, action: PayloadAction<{ name: nameTypes, value: string }>) => {
             const name = action.payload.name
-            state.values[name] = action.payload.value
+            if(name==="tel"){
+                state.values[name] = action.payload.value.replace(/\D/g,'')
+            }else {
+                state.values[name] = action.payload.value
+            }
+        },
+        addPerson: (state, action: PayloadAction<string>) => {
+            state.values.person = action.payload
+
         },
         checkValid: (state, action: PayloadAction<nameTypes | number >) => {
             const email = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
@@ -63,7 +75,7 @@ const formSlice = createSlice({
                 if(!state.values.tel.length) state.isValid.tel=false
             } else if(action.payload===2){
                  if(!state.values.password.length) state.isValid.password=false
-                 if(!state.values.repeatPassword.length) state.isValid.repeatPassword=false
+                 if(!state.values.repeatPassword.length || state.values.password!==state.values.repeatPassword) state.isValid.repeatPassword=false
             }else{
                 switch (action.payload) {
                     case "name":

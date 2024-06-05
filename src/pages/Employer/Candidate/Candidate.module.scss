@@ -1,0 +1,12 @@
+.candidates {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 15px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

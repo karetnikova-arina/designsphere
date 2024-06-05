@@ -1,0 +1,7 @@
+export const SORT = ["по популярности", "по лайкам", "по просмотрам", "по дате публикации"]
+export const DIRECTION = ["Веб-дизайн", "UX/UI-дизайн", "Графический дизайн", "3D-дизайн", "Motion-дизайн", "Промышленный дизайн", "Транспортный дизайн", "Дизайн интерьеров", "Ландшафтный дизайн", "Архитектурный дизайн", "Гейм-дизайн"]
+export const PROGRAM = ["Figma", "Photoshop", "Illustrator", "InDesign", "After Effects", "Premiere Pro", "CorelDraw", "Tilda", "3Ds Max", "Maya", "Cinema 4D", "AutoCad", "ArchiCad", "NanoCad", "Blender", "Revit", "Компас-3D", "Natron"]
+export const STATUS = ["Ищу работу", "Рассматриваю предложения", "Прислали оффер, пока думаю", "Не ищу работу"]
+export const WEBINARSORT = ["Ближайшие", "Прошедшие"]
+export const TOPICS = ["Дизайн", "Портфолио", "Резюме", "Трудоустройство", "Freelance"]
+export const GENDER = ["любой", "женский", "мужской"]

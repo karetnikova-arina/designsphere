@@ -1,0 +1,19 @@
+.subscribe{
+  cursor: pointer;
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid var(--purpul-color);
+  color: var(--purpul-color);
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 24px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+.setSubscribe {
+  background-color: var(--text-secondary-color);
+  color: white;
+}

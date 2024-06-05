@@ -1,0 +1,68 @@
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.part {
+  display: flex;
+  flex-direction: row;
+  gap: 20px
+}
+
+.button {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  border: none;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 28px;
+  padding: 0;
+  border-radius: 20px;
+  background-color: var(--inactive-color);
+  color: white;
+  div:first-child {
+    padding: 4px 8px;
+  }
+  div:last-child {
+    background-color: #BA99FF;
+    padding: 4px 8px;
+    border-radius: 20px;
+    font-weight: 400;
+  }
+  cursor: pointer;
+}
+.chose {
+  border: 1px solid var(--text-secondary-color);
+  background-color: var(--text-secondary-color);
+  color: white;
+  div:last-child {
+    background-color: white;
+    color: var(--text-secondary-color);
+  }
+}
+.save {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 52px;
+  height: 36px;
+  border-radius: 20px;
+  border: none;
+  background-color: var(--inactive-color);
+}
+.choseSave {
+  background-color: var(--text-secondary-color);
+}
+.data {
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 28px;
+  color: white;
+  padding: 4px 16px;
+  border-radius: 20px;
+  background-color: var(--text-secondary-color);
+  border: none;
+}

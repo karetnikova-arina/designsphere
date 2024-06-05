@@ -1,0 +1,19 @@
+.forget {
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 22px;
+  color: var(--text-secondary-light-color);
+  text-align: end;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.container {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}

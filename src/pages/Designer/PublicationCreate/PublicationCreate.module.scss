@@ -1,0 +1,109 @@
+.sorts {
+  position: relative;
+
+  div {
+    position: static;
+  }
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 28px;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  .title {
+    margin-bottom: 10px;
+  }
+}
+
+.form {
+  width: 50vw;
+
+  .title {
+    margin-bottom: 10px;
+    margin-top: 20px;
+  }
+}
+
+.image {
+  width: 386px;
+  height: 300px;
+  border-radius: 20px;
+  background-color: #CFCCD3;
+  object-fit: cover;
+}
+
+.button {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 4px 10px;
+  gap: 8px;
+  border-radius: 20px;
+  border: 1px solid var(--text-secondary-color);
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 24px;
+  color: var(--text-secondary-color);
+  cursor: pointer;
+}
+
+.create {
+  cursor: pointer;
+  margin-top: 20px;
+  padding: 4px 16px;
+  border-radius: 20px;
+  background-color: var(--text-secondary-color);
+  color: white;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 28px;
+  border: none;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.inactive {
+  background-color: var(--inactive-color);
+  cursor: auto;
+}
+
+.radio {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+
+  label {
+    font-size: 20px;
+    font-weight: 700;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+input {
+  svg {
+    right: -20px;
+  }
+}
+.relative {
+  position: relative;
+}

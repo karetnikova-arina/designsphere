@@ -1,0 +1,95 @@
+.title {
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 32px;
+  text-align: left;
+}
+.description {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: start;
+}
+.top {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  img {
+    border-radius: 20px;
+    background-color: var(--separator-color);
+  }
+}
+.imageVideo {
+  width: 520px;
+  height: 404px;
+}
+.imageArticle {
+  width: 356px;
+  height: 404px;
+}
+.bottom {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.date {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  color: var(--light-text-color);
+}
+.nikname {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 24px;
+}
+.likes {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  color: var(--text-secondary-color);
+  align-items: center;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 22px;
+}
+.send {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+}
+.titleComments {
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 28px;
+  align-self: start;
+  span {
+    margin-left: 5px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    color: var(--light-pink-color);
+
+  }
+}
+.comments {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: start;
+}

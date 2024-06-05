@@ -2,18 +2,36 @@
   --text-color: #0E0024;
   --text-secondary-light-color: #BA99FF;
   --text-secondary-color: #5200FF;
+  --inactive-color: #DCCCFF;
   --separator-color: #CFCCD3;
   --error-color: #FF0000;
+  --background-purpul: #F3EBFF;
+  --background-gray: #CACACA;
+  --purpul-color:#9766FF;
+  --green-color: #CCFF00;
+  --light-purpul-color: #E0CDFF;
+  --light-grey-color: #9F99A7;
+  --light-text-color: #6E667C;
+  --chat-background-color: #F9F5FF;
+  --light-pink-color: #BA99FF;
+  --light-green: #EBFF99;
+  --light-yellow: #F5FFCC;
 }
 body {
   margin: 0;
   font-family: 'Mulish', sans-serif;
   color: var(--text-color);
+  overflow-x: hidden;
+}
+button {
+  font-family: 'Mulish', sans-serif;
 }
 a {
   text-decoration: none;
+  color: var(--text-color);
 }
 #root {
+  width: 100%;
   margin: 0;
   padding: 0;
 }

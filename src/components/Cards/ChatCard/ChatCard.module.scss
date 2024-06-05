@@ -1,0 +1,74 @@
+.container {
+  width: 386px;
+  padding: 12px;
+  border-radius: 20px;
+  border: 1px solid var(--inactive-color);
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  cursor: pointer;
+}
+.chosen {
+  background-color: var(--light-purpul-color);
+}
+.image {
+  width: 74px;
+  height: 74px;
+  background-color: #D9D9D9;
+  border-radius: 74px;
+}
+.name {
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 24px;
+}
+.message {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: start;
+}
+.newMessage {
+  width: 24px;
+  height: 24px;
+  border-radius: 24px;
+  background-color: var(--text-secondary-color);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 22px;
+  color: white;
+}
+.time {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+}
+.right {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.infoMessage {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: end;
+}
+.userImage {
+  width: 24px;
+  height: 24px;
+  border-radius: 24px;
+  background-color: #D9D9D9;
+}
+.groupMessage {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+}

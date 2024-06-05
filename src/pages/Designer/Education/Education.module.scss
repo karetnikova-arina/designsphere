@@ -1,0 +1,89 @@
+
+.element {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  .head{
+    text-align: start;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 32px;
+  }
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.save {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 3px 18px;
+  border-radius: 20px;
+  border: 1px solid var(--text-secondary-color);
+  path {
+    stroke: var(--text-secondary-color);
+  }
+}
+.add {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  background-color: var(--text-secondary-color);
+  padding: 4px 12px;
+  border-radius: 20px;
+  color: white;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 28px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.articleContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-between;
+}
+.addition {
+  cursor: pointer;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 22px;
+  color: var(--text-secondary-light-color);
+}
+.schedule {
+  cursor: pointer;
+  border-radius: 20px;
+  padding: 4px 16px;
+  border: none;
+  color: white;
+  background-color: var(--text-secondary-color);
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 28px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}
+.background {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}

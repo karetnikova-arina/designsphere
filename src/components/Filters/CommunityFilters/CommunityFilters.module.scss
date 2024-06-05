@@ -1,0 +1,64 @@
+.button {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  background-color: transparent;
+  border: 1px solid var(--text-secondary-color);
+  color: var(--text-secondary-color);
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 28px;
+  padding: 0;
+  border-radius: 20px;
+  div:first-child {
+    padding: 4px 8px;
+  }
+  div:last-child {
+    background-color: var(--inactive-color);
+    padding: 4px 8px;
+    border-radius: 20px;
+    font-weight: 400;
+  }
+  cursor: pointer;
+}
+.chose {
+  background-color: var(--text-secondary-color);
+  color: white;
+  div:last-child {
+    background-color: white;
+    color: var(--text-secondary-color);
+  }
+}
+.createGroup {
+  cursor: pointer;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 28px;
+  background-color: var(--inactive-color);
+  padding: 4px 8px;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  a {
+    color: white;
+  }
+}
+.createGroupInGroup {
+  background-color: var(--text-secondary-color);
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.element {
+  display: flex;
+  flex-direction: row;
+  gap: 20px
+}
+

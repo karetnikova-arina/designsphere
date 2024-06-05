@@ -1,0 +1,42 @@
+.container {
+  position: fixed;
+  top: calc(50% - 265px);
+  right: calc(50% - 270px);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  width: 540px;
+  padding: 30px 30px 70px 30px;
+  border-radius: 20px;
+  background-color: white;
+  z-index: 3;
+}
+.notification {
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 32px;
+}
+.close {
+  height: 15px;
+  width: 15px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+.background {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  position: fixed;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 3;
+}
+.title {
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 40px;
+  color: var(--text-secondary-color);
+}

@@ -1,9 +1,13 @@
 import style from "./RadioButton.module.scss"
+import {InputHTMLAttributes} from "react";
 
-export function RadioButton({title}: {title: string}) {
+interface RadioButtonProps extends InputHTMLAttributes<HTMLInputElement>{
+    title: string, setValue: (value: string)=>void, chosen: boolean
+}
+export function RadioButton({title,setValue, chosen, ...props}: RadioButtonProps) {
     return (
         <div className={style.container}>
-            <input className={style.input} id={title} type="radio" name="radio"/>
+            <input {...props} checked={chosen} onChange={()=>setValue(title)} className={style.input} id={title} type="radio" />
             <label className={style.label} htmlFor={title}>{title}</label>
         </div>
     )

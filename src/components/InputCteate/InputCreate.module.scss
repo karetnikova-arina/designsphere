@@ -1,0 +1,57 @@
+.container {
+  width: 100%;
+  position: relative;
+  input {
+    box-sizing: border-box;
+    left: 0;
+    right: 0;
+    outline: none;
+    width: 100%;
+    padding: 8px 30px 8px 16px;
+    border-radius: 10px;
+    border: 1px solid var(--light-grey-color);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+  input::placeholder{
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 28px;
+    color: var(--light-grey-color);
+  }
+  path {
+    stroke: var(--text-color);
+  }
+  svg {
+    position: absolute;
+    right: 10px;
+    top: 10px
+  }
+}
+.focus {
+  input {
+    outline: none;
+    border: 1px solid #7433FF;
+    color:#7433FF;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+  }
+  path {
+    stroke: #7433FF;
+  }
+}
+.error {
+  input {
+    outline: none;
+    border: 1px solid var(--error-color);
+    color:var(--error-color);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+  }
+  path {
+    stroke: var(--error-color);
+  }
+}

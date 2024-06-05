@@ -25,13 +25,13 @@
   position: absolute;
   left: 0;
   top: 4px;
-  background: url("/CheckboxUnchecked.png");
+  background: url("/CheckboxUnchecked.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 .input:checked + label:before {
-  background: url('/CheckboxChecked.png');
+  background: url('/CheckboxChecked.svg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

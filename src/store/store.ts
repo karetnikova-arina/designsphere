@@ -1,11 +1,15 @@
 import {configureStore} from "@reduxjs/toolkit";
 import formSlice from "./formSlice.ts"
 import userSlice from "./userSlice.tsx";
+import myGroupSlice from "./myGroupSlice.ts";
+import webinar from "./webinarSlice.ts";
 
 export const store = configureStore({
     reducer:{
         form: formSlice,
-        user: userSlice
+        user: userSlice,
+        myGroup: myGroupSlice,
+        webinar: webinar
     }
 })
 store.subscribe(()=>{

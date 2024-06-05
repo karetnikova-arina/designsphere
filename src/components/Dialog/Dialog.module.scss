@@ -1,0 +1,185 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+
+  button {
+    cursor: pointer;
+    width: 44px;
+    height: 32px;
+    border-radius: 20px;
+    border: 1px solid var(--text-secondary-color);
+    background-color: transparent;
+  }
+}
+
+.name {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 24px;
+
+  img {
+    height: 52px;
+    width: 52px;
+    border-radius: 52px;
+    background-color: #D9D9D9;
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 22px;
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: end;
+  flex-grow: 2;
+}
+.overflow {
+  height: 60vh;
+  overflow-y: auto;
+}
+.overflow::-webkit-scrollbar {
+  display: none;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+  width: 100%;
+}
+
+.day {
+  align-self: center;
+  background-color: #E6D7FF;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  color: var(--light-text-color);
+}
+.sendInput {
+  input::placeholder {
+    color: var(--light-grey-color);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+  input {
+    padding: 6px 12px 6px 40px;
+    border-radius: 20px;
+    border: 1px solid var(--purpul-color);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+  .send {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+  .file {
+    position: absolute;
+    left: 10px;
+  }
+}
+.hidden {
+  display: none;
+}
+.inputSearch {
+  input:focus +.search {
+    background-color: var(--text-secondary-color);
+  }
+  input:focus {
+    color: var(--text-color);
+    outline: none;
+    border: 1px solid var(--text-secondary-color);
+    ::placeholder {
+      color: var(--text-color)
+    }
+  }
+  input:focus::placeholder {
+    color: var(--text-color)
+  }
+}
+.search {
+  cursor: pointer;
+  background-color: var(--purpul-color);
+  padding: 8px 8px 4px;
+  border-radius: 20px;
+  border: none;
+}
+.inputSearch {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.focusButton {
+  background-color: var(--text-secondary-color);
+}
+.input {
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid var(--purpul-color);
+  outline: none;
+  flex-grow: 5;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  color: var(--purpul-color);
+
+}
+.input::placeholder {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  color: var(--purpul-color);
+}
+.vacancy {
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 22px;
+  color: var(--text-secondary-color);
+}
+.response {
+  align-self: end;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  background-color: var(--purpul-color);
+  color: white;
+}
+.invite {
+  align-self: start;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  background-color: var(--green-color);
+}

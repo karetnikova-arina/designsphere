@@ -1,0 +1,36 @@
+.container {
+  width: 1218px;
+  position: fixed;
+  top: 50px;
+  right: calc(50% - 640px);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  padding: 30px 30px 70px 30px;
+  border-radius: 20px;
+  background-color: white;
+  z-index: 3;
+  overflow-y: auto;
+  max-height: 70vh;
+}
+.container::-webkit-scrollbar{
+  display: none;
+}
+.background {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  position: fixed;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 3;
+}
+.close {
+  height: 15px;
+  width: 15px;
+  position: absolute;
+  right: 30px;
+  top: 20px;
+}

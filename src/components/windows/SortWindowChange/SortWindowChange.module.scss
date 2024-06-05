@@ -1,0 +1,30 @@
+.container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 37px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  background-color: var(--background-purpul);
+  padding: 8px 20px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  border-radius: 20px;
+  z-index: 1;
+  div {
+    cursor: pointer;
+  }
+}
+.right {
+  border-radius: 20px 0 20px 20px;
+}
+.left {
+  border-radius: 0 20px 20px 20px;
+}
+.all {
+  border-radius: 20px;
+}

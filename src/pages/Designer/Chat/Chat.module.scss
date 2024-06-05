@@ -1,0 +1,133 @@
+.container {
+  min-width: 1200px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  height: 100%;
+}
+
+.mainWindowDialog {
+  display: flex;
+  padding: 30px;
+  width: 100%;
+  background-color: var(--chat-background-color);
+  border-radius: 20px;
+}
+.inputSearch {
+  input:focus +.search {
+    background-color: var(--text-secondary-color);
+  }
+  input:focus {
+    color: var(--text-color);
+    outline: none;
+    border: 1px solid var(--text-secondary-color);
+    ::placeholder {
+      color: var(--text-color)
+    }
+  }
+  input:focus::placeholder {
+    color: var(--text-color)
+  }
+}
+.search {
+  cursor: pointer;
+  background-color: var(--purpul-color);
+  padding: 8px 8px 4px;
+  border-radius: 20px;
+  border: none;
+}
+.inputSearch {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.focusButton {
+  background-color: var(--text-secondary-color);
+}
+.input {
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid var(--purpul-color);
+  outline: none;
+  flex-grow: 5;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  color: var(--purpul-color);
+
+}
+.input::placeholder {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  color: var(--purpul-color);
+}
+.element {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  right: 0;
+}
+.buttonContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.button {
+  cursor: pointer;
+  padding: 4px 10px 4px 10px;
+  border-radius: 20px;
+  border: 1px solid var(--text-secondary-color);
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 24px;
+  color: var(--text-secondary-color);
+  background-color: transparent;
+}
+.chosenButton {
+  background-color: var(--text-secondary-color);
+  color: white;
+}
+.chats {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.chatList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 500px;
+  overflow-y: auto;
+}
+.chatList::-webkit-scrollbar {
+  display: none;
+}
+.sendInput {
+  input::placeholder {
+    color: var(--light-grey-color);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+  input {
+    padding: 6px 12px 6px 40px;
+    border-radius: 20px;
+    border: 1px solid var(--purpul-color);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+  .send {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+  .file {
+    position: absolute;
+    left: 10px;
+  }
+}

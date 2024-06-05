@@ -1,0 +1,16 @@
+.container {
+  box-sizing: border-box;
+  background-color: var(--background-purpul);
+  padding: 50px 111px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100vw;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  a {
+    font-weight: 400;
+    color: var(--text-color);
+  }
+}

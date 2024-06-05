@@ -1,0 +1,22 @@
+.button {
+  padding: 4px 16px;
+  border-radius: 20px;
+  border: 1px solid var(--purpul-color);
+  background-color: transparent;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 28px;
+  color: var(--purpul-color);
+  cursor: pointer;
+  z-index: 2;
+}
+.highlighting {
+  color: var(--text-secondary-color);
+  border: 1px solid var(--text-secondary-color);
+}
+.chosen {
+  border-radius: 20px 20px 0 0;
+  border:1px solid var(--background-purpul);
+  background-color: var(--background-purpul);
+  color: var(--text-secondary-color);
+}
