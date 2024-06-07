@@ -6,7 +6,7 @@ export function Comments({comments}: {comments: typeof PROSMOTR_VIDEO_COMMENTS})
     return(
         <div className={style.comments}>
             <div className={style.titleComments}>Комментарии <span>{comments.length}</span></div>
-            {comments.map(el=><Comment text={el.comment} date={el.time} name={el.nickname} like={{liked: false, count: Number(el.like)}}/>)}
+            {comments.map(el=><Comment photo={`/images/${el.nickname_photo}.jpg`} text={el.comment} date={el.time} name={el.nickname} like={{liked: false, count: Number(el.like)}}/>)}
         </div>
     )
 }

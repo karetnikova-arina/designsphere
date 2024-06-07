@@ -46,7 +46,7 @@ export function VideoArticle({close, type}: { close: () => void, type: string })
                     })}/>
                     <div className={style.info}>
                         <div className={style.title}>{data?.title}</div>
-                        <div className={style.description}>{data?.description}</div>
+                        <div dangerouslySetInnerHTML={{ __html: data?.description ?? ""}}  className={style.description}/>
                     </div>
                 </div>
                 <div className={style.bottom}>

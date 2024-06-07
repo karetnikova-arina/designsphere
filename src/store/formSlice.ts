@@ -76,6 +76,8 @@ const formSlice = createSlice({
             } else if(action.payload===2){
                  if(!state.values.password.length) state.isValid.password=false
                  if(!state.values.repeatPassword.length || state.values.password!==state.values.repeatPassword) state.isValid.repeatPassword=false
+                console.log(state.values.password)
+                console.log(state.values.repeatPassword)
             }else{
                 switch (action.payload) {
                     case "name":

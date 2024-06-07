@@ -76,7 +76,6 @@ export function PersonalAccount() {
                         <img src="/user_add.svg"/>
                         <div>Подписаться</div>
                     </button>}
-
                 </div>
             </div>
             <div className={style.portfolio}>Портфолио</div>

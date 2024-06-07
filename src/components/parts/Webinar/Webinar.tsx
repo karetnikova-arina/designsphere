@@ -40,7 +40,7 @@ export function Webinar({close}: {close: ()=>void}) {
                     <img src={`/images/${PROSMOTR_WEBINAR.photo}.jpg`}/>
                     <div className={style.info}>
                         <div className={style.title}>{PROSMOTR_WEBINAR.title}</div>
-                        <div className={style.description}>{PROSMOTR_WEBINAR.description}</div>
+                        <div dangerouslySetInnerHTML={{ __html: PROSMOTR_WEBINAR.description }} className={style.description}/>
                     </div>
                 </div>
                 <div className={style.bottom}>

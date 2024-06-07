@@ -5,7 +5,7 @@ export const USER_PROFILE_LK = {
     nickname_photo: '42',
     city: 'Москва',
     direction: ['UX/UI дизайн'],
-    programm: ['Figma, Photoshop', 'Illustrator, Tilda']
+    programm: ['Figma', 'Photoshop', 'Illustrator', 'Tilda']
 }
 
 

@@ -8,6 +8,7 @@ interface commentProps {
     name: string
     text: string
     date: string
+    photo: string
     like: {
         liked: boolean
         count: number
@@ -19,7 +20,7 @@ export function Comment(props: commentProps) {
     const [liked, setLiked] = useState(props.like.liked)
     return (
         <div className={style.container}>
-            <img className={style.image}/>
+            <img src={props.photo} className={style.image}/>
             <div className={style.comment}>
                 <div className={style.name}>{props.name}</div>
                 <div className={style.text}>{props.text}</div>

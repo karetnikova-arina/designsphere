@@ -107,7 +107,8 @@ export function CreateGroup({type}: { type: boolean }) {
                 description: descriptionValue,
                 visible: radio === "Публичная",
                 programs: newPrograms,
-                directions: newDirections
+                directions: newDirections,
+                creator_photo: ""
             }
         }))
         navigation("/communities/mygroup")

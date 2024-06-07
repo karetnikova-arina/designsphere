@@ -12,58 +12,72 @@ import {useNavigate} from "react-router-dom";
 import {userActions} from "../../../store/userSlice.tsx";
 
 export function RegistrationPassword({title}: { title: string }) {
-    const navigation = useNavigate()
-    const dispatch = useDispatch<AppDispatch>()
-    const {values, isValid} = useSelector((s: RootState) => s.form)
-    const [checkedConditions, setCheckedConditions] = useState(false)
-    const [validation, setValidation] = useState(false)
+    const navigate = useNavigate();
+    const dispatch = useDispatch<AppDispatch>();
+    const {values, isValid} = useSelector((s: RootState) => s.form);
+    const [checkedConditions, setCheckedConditions] = useState(false);
+    const [validation, setValidation] = useState(false);
+
     const changeValue = (event: React.ChangeEvent<HTMLInputElement>) => {
-        dispatch(formActions.addValue({name: event.target.name as nameTypes, value: event.target.value}))
-    }
-    useEffect(()=>{
-        if(!isValid.password) dispatch(formActions.checkValid("password" as nameTypes))
-        if(!isValid.repeatPassword) dispatch(formActions.checkValid("repeatPassword" as nameTypes))
-    },[values.password, values.repeatPassword])
+        dispatch(formActions.addValue({name: event.target.name as nameTypes, value: event.target.value}));
+    };
+
     useEffect(() => {
-        if (isValid.repeatPassword || isValid.password) {
-            setValidation(true)
+        if (!isValid.password) dispatch(formActions.checkValid("password" as nameTypes));
+        if (!isValid.repeatPassword) dispatch(formActions.checkValid("repeatPassword" as nameTypes));
+    }, [values.password, values.repeatPassword]);
+
+    useEffect(() => {
+        if (isValid.repeatPassword && isValid.password) {
+            setValidation(true);
         }
-    }, [isValid.repeatPassword, isValid.password])
+    }, [isValid.repeatPassword, isValid.password]);
+
     const submit = (e: FormEvent) => {
-        e.preventDefault()
-        dispatch(formActions.checkValid(2))
-        if (isValid.password && isValid.repeatPassword) {
-            if (values.password && values.repeatPassword && title === "Восстановление пароля" ? validation : checkedConditions) {
-                dispatch(userActions.addJwt(values.password))
-                navigation("/")
+        e.preventDefault();
+        dispatch(formActions.checkValid(2));
+        if (values.password.length!==0 && values.repeatPassword.length!==0 && values.password===values.repeatPassword) {
+            if (values.password && values.repeatPassword && (title === "Восстановление пароля" ? validation : checkedConditions)) {
+                dispatch(userActions.addJwt(values.password));
+                navigate("/");
             }
         }
-    }
+    };
+
     return (
         <div className={style.container}>
-            <AuthTitle title={title} text="Уже есть аккаунт?" link="Войти"/>
+            <AuthTitle title={title} text="Уже есть аккаунт?" link="Войти" />
             <div>Пароль должен содержать не менее 8 символов, используйте прописные и заглавные буквы и цифры</div>
             <form onSubmit={(e) => submit(e)} className={style.form}>
-                <AuthElement title="Пароль"><InputPassword value={values.password} isValid={isValid.password}
-                                                           onChange={(e) => changeValue(e)}
-                                                           placeholder="Введите пароль" name="password"/></AuthElement>
-                <AuthElement title="Повторите пароль"><InputPassword value={values.repeatPassword}
-                                                                     isValid={isValid.repeatPassword}
-                                                                     onChange={(e) => changeValue(e)}
-                                                                     placeholder="Введите пароль"
-                                                                     name="repeatPassword"/></AuthElement>
-                {title !== "Восстановление пароля" && <div className={style.checkbox}>
-                    <CheckBox setValue={()=>{}} checked={checkedConditions} onChange={() => setCheckedConditions(prev => !prev)}
-                              id="conditions">
-                        <div>Я согласен <a>с условиями обработки персональных данных</a></div>
-                    </CheckBox>
-                    <CheckBox setValue={()=>{}} id="information">
-                        <div>Я хочу получать <a>полезную информацию от сообщества</a></div>
-                    </CheckBox>
-                </div>}
-                <Button
-                    isValid={isValid.password && isValid.repeatPassword && title === "Восстановление пароля" ? validation : checkedConditions}>Зарегистрироваться</Button>
+                <AuthElement title="Пароль">
+                    <InputPassword value={values.password} isValid={isValid.password}
+                                   onChange={(e) => changeValue(e)}
+                                   placeholder="Введите пароль" name="password" />
+                </AuthElement>
+                <AuthElement title="Повторите пароль">
+                    <InputPassword value={values.repeatPassword}
+                                   isValid={isValid.repeatPassword}
+                                   onChange={(e) => changeValue(e)}
+                                   placeholder="Введите пароль"
+                                   name="repeatPassword" />
+                </AuthElement>
+                {title !== "Восстановление пароля" && (
+                    <div className={style.checkbox}>
+                        <CheckBox setValue={() => {
+                            console.log(validation)
+                            setCheckedConditions(prev => !prev)
+                        }} checked={checkedConditions} id="conditions">
+                            <div>Я согласен <a>с условиями обработки персональных данных</a></div>
+                        </CheckBox>
+                        <CheckBox setValue={() => {}} id="information">
+                            <div>Я хочу получать <a>полезную информацию от сообщества</a></div>
+                        </CheckBox>
+                    </div>
+                )}
+                <Button isValid={values.password.length!==0 && values.repeatPassword.length!==0 && values.password===values.repeatPassword && (title === "Восстановление пароля" ? validation : checkedConditions)}>
+                    Зарегистрироваться
+                </Button>
             </form>
         </div>
-    )
+    );
 }
