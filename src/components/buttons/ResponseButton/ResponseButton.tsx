@@ -2,16 +2,29 @@ import style from "./ResponseButton.module.scss"
 import {ButtonHTMLAttributes} from "react";
 import cn from "classnames";
 
-interface ResponseButton extends ButtonHTMLAttributes<HTMLButtonElement>{
-    response: boolean
+interface ResponseButton extends ButtonHTMLAttributes<HTMLButtonElement> {
+    response: string
 }
+
 export function ResponseButton({response, ...props}: ResponseButton) {
-    return(
-        <button {...props} className={cn(style.button, {
-            [style.responsed]: response
+    return (
+        <>
+        {response === "invited" ? <div className={style.buttons}>
+            <button {...props} className={cn(style.button, style.invited)}>
+                <img src="/job_invite.svg"/>
+                <div>Вас пригласили</div>
+            </button>
+            <button {...props} className={cn(style.button, style.chat)}>
+                <img src="/chat_white.svg"/>
+                <div>Перейти в чат</div>
+            </button>
+        </div> : <button {...props} className={cn(style.button, {
+            [style.responsed]: response==="responsed"
         })}>
-            <img src={response ? "/responsed.svg": "/response.svg"}/>
-            <div>{response ? "Отклик отправлен": "Откликнуться"}</div>
+            <img src={response === "responsed" ? "/responsed.svg" : "/response.svg"}/>
+            <div>{response === "responsed" ? "Отклик отправлен" : "Откликнуться"}</div>
         </button>
+        }
+        </>
     )
 }

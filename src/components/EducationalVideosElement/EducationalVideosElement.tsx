@@ -2,8 +2,9 @@ import style from "./EducationalVideosElement.module.scss"
 import {LikeButton} from "../buttons/LikeButton/LikeButton.tsx";
 import {useState} from "react";
 import {SaveButton} from "../buttons/SaveButton/SaveButton.tsx";
+import {OBUCHENIE_VIDEO_INTERFACE} from "../../data/5obuchenie.ts";
 
-export function EducationalVideosElement({open}: {open: ()=>void}) {
+export function EducationalVideosElement({open, props}: {open: ()=>void, props: OBUCHENIE_VIDEO_INTERFACE}) {
     const [liked, setLiked] = useState(false)
     const [saved, setSaved] = useState(false)
     return (
@@ -11,11 +12,11 @@ export function EducationalVideosElement({open}: {open: ()=>void}) {
             <div onClick={()=>setSaved(prev=>!prev)} className={style.save}>
                 <SaveButton saved={saved}/>
             </div>
-            <img className={style.image}/>
+            <img src={`images/${props.photo}.jpg`} className={style.image}/>
             <div className={style.content}>
                 <div>
-                    <div className={style.title}>Title</div>
-                    <div className={style.description}>Краткое описание</div>
+                    <div className={style.title}>{props.title}</div>
+                    <div className={style.description}>{props.description}</div>
                 </div>
                 <div className={style.statsContainer}>
                     <div className={style.stats}>
@@ -24,15 +25,15 @@ export function EducationalVideosElement({open}: {open: ()=>void}) {
                             setLiked(prev => !prev)
                         }} className={style.stat}>
                             <LikeButton liked={liked}/>
-                            <div>123</div>
+                            <div>{props.likes}</div>
                         </div>
                         <div className={style.stat}>
                             <img src="/message.svg"/>
-                            <div>123</div>
+                            <div>{props.comments}</div>
                         </div>
                         <img src="/send.svg"/>
                     </div>
-                    <div className={style.date}>01.02.2020</div>
+                    <div className={style.date}>{props.data}</div>
                 </div>
             </div>
         </div>

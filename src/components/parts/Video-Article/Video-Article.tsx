@@ -1,5 +1,5 @@
 import style from "./Video.module.scss"
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {useSelector} from "react-redux";
 import {RootState} from "../../../store/store.ts";
 import {NotificationWindow} from "../../windows/NotificationWindow/NotificationWindow.tsx";
@@ -9,25 +9,44 @@ import {SaveButton} from "../../buttons/SaveButton/SaveButton.tsx";
 import {CommentsButton} from "../../buttons/CommentsButton/CommentsButton.tsx";
 import cn from "classnames";
 import {Comments} from "../../Comments/Comments.tsx";
+import {
+    PROSMOTR_STATYA,
+    PROSMOTR_STATYA_COMMENTS,
+    PROSMOTR_VIDEO,
+    PROSMOTR_VIDEO_COMMENTS
+} from "../../../data/10prosmotr.ts";
 
 export function VideoArticle({close, type}: { close: () => void, type: string }) {
     const [window, setWindow] = useState(false)
     const {jwt} = useSelector((s: RootState) => s.user)
     const [liked, setLiked] = useState(false)
     const [saved, setSaved] = useState(false)
+    const [data, setData] = useState<typeof PROSMOTR_VIDEO>()
+    const [comments, setComments] = useState<typeof PROSMOTR_STATYA_COMMENTS>([])
+
+    useEffect(()=>{
+        if(type === "article") {
+            setData(PROSMOTR_STATYA)
+            setComments(PROSMOTR_STATYA_COMMENTS)
+        }
+        if(type === "video") {
+            setData(PROSMOTR_VIDEO)
+            setComments(PROSMOTR_VIDEO_COMMENTS)
+        }
+    },[])
     return (
         <>
             {window && <NotificationWindow text="Чтобы подписаться, необходимо авторизоваться"
                                            close={() => setWindow(false)}/>}
             <PopupWindow close={close}>
                 <div className={style.top}>
-                    <img className={cn({
+                    <img src={`/images/${data?.photo}.jpg`} className={cn({
                         [style.imageArticle]: type === "article",
                         [style.imageVideo]: type === "video",
                     })}/>
                     <div className={style.info}>
-                        <div className={style.title}>Title</div>
-                        <div className={style.description}>nfghfdjgkjdghkdghdjgdfjkghdkjghfdgkdhg</div>
+                        <div className={style.title}>{data?.title}</div>
+                        <div className={style.description}>{data?.description}</div>
                     </div>
                 </div>
                 <div className={style.bottom}>
@@ -41,14 +60,14 @@ export function VideoArticle({close, type}: { close: () => void, type: string })
                             if (jwt) setLiked(prevState => !prevState)
                         }} className={style.likes}>
                             <LikeButton liked={liked}/>
-                            <div>123</div>
+                            <div>{data?.likes}</div>
                         </div>
-                        <CommentsButton/>
+                        <CommentsButton count={data?.comments}/>
                         <button className={style.send}><img src="/send.svg"/></button>
                     </div>
-                    <div className={style.date}>01.04.2024</div>
+                    <div className={style.date}>{data?.data}</div>
                 </div>
-                <Comments/>
+                <Comments comments={comments}/>
             </PopupWindow>
         </>
     )

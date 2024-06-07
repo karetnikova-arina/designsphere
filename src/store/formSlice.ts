@@ -42,8 +42,8 @@ const initialState: formState = {
         tel: "",
         password: "",
         repeatPassword: "",
-        person: "Работодатель"
-        //person: ""
+        //person: "Работодатель"
+        person: ""
     }
 }
 

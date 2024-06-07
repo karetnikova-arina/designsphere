@@ -11,6 +11,7 @@ export interface myGroupState {
         programs: string[]
         visible: boolean | undefined
         creator?: string
+        creator_photo: string
     }
 
 }
@@ -23,7 +24,8 @@ const initialState: myGroupState = {
         directions: [],
         programs: [],
         visible: undefined,
-        creator: "arinaaa_kk"
+        creator: "arinaaa_kk",
+        creator_photo: '42'
     }
 }
 const myGroupSlice = createSlice({

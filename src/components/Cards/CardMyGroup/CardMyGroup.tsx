@@ -2,21 +2,22 @@ import style from "./CardMyGroup.module.scss"
 import {CardImage} from "../CardImage/CardImage.tsx";
 import {LikeButton} from "../../buttons/LikeButton/LikeButton.tsx";
 import {useState} from "react";
+import {PORTFOLIO_INTERFACE} from "../../../data/17user_profile.ts";
 
-export function CardMyGroup({type, onClick}: {type: boolean, onClick: ()=>void}) {
+export function CardMyGroup({type, onClick, props}: {type: boolean, onClick: ()=>void, props: PORTFOLIO_INTERFACE}) {
     const [liked, setLiked] = useState(false)
     return(
         <div onClick={onClick} className={style.container}>
-            <CardImage type="profile"/>
+            <CardImage props={props} type="profile"/>
             <div className={style.information}>
                 <div className={style.stats}>
                     <div onClick={()=>setLiked(prev=>!prev)} className={style.element}>
                         <LikeButton liked={liked}/>
-                        <div>123</div>
+                        <div>{props.like}</div>
                     </div>
                     <div className={style.element}>
                         <img className={style.stat} src="/message.svg"/>
-                        <div>123</div>
+                        <div>{props.comments}</div>
                     </div>
                 </div>
                 {type ? <button className={style.button}>

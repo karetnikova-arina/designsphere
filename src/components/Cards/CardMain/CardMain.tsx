@@ -5,8 +5,9 @@ import {CardImage} from "../CardImage/CardImage.tsx";
 import {useSelector} from "react-redux";
 import {RootState} from "../../../store/store.ts";
 import {NotificationWindow} from "../../windows/NotificationWindow/NotificationWindow.tsx";
+import {MAIN_PUBLICATION_INTERFACE} from "../../../data/1main.ts";
 
-export function CardMain() {
+export function CardMain({props, onClick}: {props: MAIN_PUBLICATION_INTERFACE, onClick: ()=>void }) {
     const [liked, setLiked] = useState(false)
     const [window, setWindow] = useState("")
     const {jwt} = useSelector((s: RootState) => s.user)
@@ -25,22 +26,22 @@ export function CardMain() {
         setWindow("")
     }
     return (
-        <div className={style.container}>
+        <div onClick={onClick} className={style.container}>
             {window.length > 0 && <NotificationWindow close={close} text={window}/>}
-            <CardImage type="main"/>
+            <CardImage props={props} type="main"/>
             <div className={style.information}>
                 <div className={style.element}>
-                    <img className={style.avatar}/>
-                    <div className={style.nikname}>Никнейм</div>
+                    <img className={style.avatar} src={`images/${props.nickname_photo}.jpg`}/>
+                    <div className={style.nikname}>{props.nickname}</div>
                 </div>
                 <div className={style.stats}>
                     <div className={style.element}>
                         <img className={style.stat} src="/message.svg"/>
-                        <div>123</div>
+                        <div>{props.comments}</div>
                     </div>
                     <div onClick={click} className={style.element}>
                         <LikeButton liked={liked}/>
-                        <div>123</div>
+                        <div>{props.like}</div>
                     </div>
                 </div>
             </div>

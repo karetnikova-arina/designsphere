@@ -15,3 +15,16 @@
 .responsed {
   background-color: var(--purpul-color);
 }
+.invited {
+  background-color: var(--green-color);
+  color: black;
+}
+.chat {
+  background-color: var(--text-secondary-color);
+  color: white;
+}
+.buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}

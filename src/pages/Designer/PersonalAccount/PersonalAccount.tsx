@@ -2,20 +2,38 @@ import style from "./PersonalAccount.module.scss"
 import {CardMyGroup} from "../../../components/Cards/CardMyGroup/CardMyGroup.tsx";
 import {NavLink, useLocation, useNavigate} from "react-router-dom";
 import {useEffect, useState} from "react";
-import {useDispatch, useSelector} from "react-redux";
-import {AppDispatch, RootState} from "../../../store/store.ts";
+import {useDispatch} from "react-redux";
+import {AppDispatch} from "../../../store/store.ts";
 import {userActions} from "../../../store/userSlice.tsx";
 import {ProjectInAccount} from "../../../components/ProjectInAccount/ProjectInAccount.tsx";
+import {PORTFOLIO, USER_PROFILE} from "../../../data/17user_profile.ts";
+import {PORTFOLIO_LK, USER_PROFILE_LK} from "../../../data/18lk.ts";
 
 export function PersonalAccount() {
     const navigation = useNavigate()
     const location = useLocation()
     const [card, setCard] = useState(false)
     const [windowCard, setWindowCard] = useState(false)
-    const {user} = useSelector((s: RootState) => s.user)
     const dispatch = useDispatch<AppDispatch>()
+    const [portfolio, setPortfolio] = useState<typeof PORTFOLIO>([])
+    const [personalInfo, setPersonalInfo] = useState<typeof USER_PROFILE_LK>({
+        id: '1',
+        nickname: 'arinaaa_kk',
+        name: 'Арина Каретникова',
+        nickname_photo: '42',
+        city: 'Москва',
+        direction: ['UX/UI дизайн'],
+        programm: ['Figma, Photoshop', 'Illustrator, Tilda']
+    })
     useEffect(() => {
         window.scrollTo(0, 0);
+        if(location.pathname!=="/personalaccount") {
+            setPortfolio(PORTFOLIO)
+            setPersonalInfo(USER_PROFILE)
+        }else {
+            setPortfolio(PORTFOLIO_LK)
+            setPersonalInfo(USER_PROFILE_LK)
+        }
     }, []);
     useEffect(()=>{
         setCard(location.pathname==="/personalaccount")
@@ -28,14 +46,14 @@ export function PersonalAccount() {
         <div className={style.container}>
             {windowCard && <ProjectInAccount close={() => setWindowCard(false)}/>}
             <div className={style.titleInfo}>
-                <img className={style.image} src={user.image}/>
+                <img className={style.image} src={`/images/${personalInfo.nickname_photo}.jpg`}/>
                 <div className={style.info}>
-                    <div className={style.nikname}>{user.nikname}</div>
-                    <div className={style.name}>{user.name} {user.surname}</div>
-                    <div className={style.city}>{user.city}</div>
+                    <div className={style.nikname}>{personalInfo.nickname}</div>
+                    <div className={style.name}>{personalInfo.name}</div>
+                    <div className={style.city}>{personalInfo.city}</div>
                     <div className={style.points}>
-                        {user.directions.length!==0 && user.directions.map(el=><div>{el}</div>)}
-                        {user.programs.length!==0 && user.programs.map(el=><div>{el}</div>)}
+                        {personalInfo.direction && personalInfo.direction.map(el=><div>{el}</div>)}
+                        {personalInfo.programm && personalInfo.programm.map(el=><div>{el}</div>)}
                     </div>
                     {location.pathname==="/personalaccount" ? <div className={style.buttons}>
                         <NavLink to="/personalaccount/edit" className={style.blueButton}>
@@ -67,12 +85,7 @@ export function PersonalAccount() {
                 <div>Добавить новую работу</div>
             </button>}
             <div className={style.cards}>
-                <CardMyGroup onClick={()=>setWindowCard(true)} type={card}/>
-                <CardMyGroup onClick={()=>setWindowCard(true)} type={card}/>
-                <CardMyGroup onClick={()=>setWindowCard(true)} type={card}/>
-                <CardMyGroup onClick={()=>setWindowCard(true)} type={card}/>
-                <CardMyGroup onClick={()=>setWindowCard(true)} type={card}/>
-                <CardMyGroup onClick={()=>setWindowCard(true)} type={card}/>
+                {portfolio. map(el=><CardMyGroup props={el} onClick={()=>setWindowCard(true)} type={card}/>)}
             </div>
         </div>
     )

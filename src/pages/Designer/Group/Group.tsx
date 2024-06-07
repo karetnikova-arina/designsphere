@@ -2,11 +2,7 @@ import style from "./Group.module.scss"
 import {InputSearchFilters} from "../../../components/Filters/InputSearchFilters/InputSearchFilters.tsx";
 import {CardProfile} from "../../../components/Cards/CardProfile/CardProfile.tsx";
 import {GroupTitle} from "../../../components/GroupTitle/GroupTitle.tsx";
-
-// interface GroupProps {
-//     directions: string[],
-//     programs: string[]
-// }
+import {SOOBSCHESTVO_GROUP1_POSTS} from "../../../data/11soobschestvo_group1.ts";
 
 
 export function Group() {
@@ -15,13 +11,7 @@ export function Group() {
             <GroupTitle myGroup={false}/>
             <InputSearchFilters/>
             <div className={style.content}>
-                <CardProfile/>
-                <CardProfile/>
-                <CardProfile/>
-                <CardProfile/>
-                <CardProfile/>
-                <CardProfile/>
-                <CardProfile/>
+                {SOOBSCHESTVO_GROUP1_POSTS.map(el=> <CardProfile {...el}/>)}
             </div>
         </div>
     )

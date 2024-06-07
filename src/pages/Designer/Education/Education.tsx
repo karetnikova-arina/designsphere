@@ -13,6 +13,7 @@ import {RootState} from "../../../store/store.ts";
 import {Webinar} from "../../../components/parts/Webinar/Webinar.tsx";
 import {DevelopmentWindow} from "../../../components/windows/DevelopmentWindow/DevelopmentWindow.tsx";
 import {VideoArticle} from "../../../components/parts/Video-Article/Video-Article.tsx";
+import {OBUCHENIE_STATYA, OBUCHENIE_VIDEO, OBUCHENIE_WEBINAR} from "../../../data/5obuchenie.ts";
 
 export function Education() {
     const [sort, setSort] = useState(false)
@@ -71,10 +72,7 @@ export function Education() {
                     </div>
                 </div>
                 <div className={style.articleContainer}>
-                    <ArticleElement open={()=>setVideoArticleWin("article")}/>
-                    <ArticleElement open={()=>setVideoArticleWin("article")}/>
-                    <ArticleElement open={()=>setVideoArticleWin("article")}/>
-                    <ArticleElement open={()=>setVideoArticleWin("article")}/>
+                    {OBUCHENIE_STATYA.map(el=><ArticleElement props={el} open={()=>setVideoArticleWin("article")}/>)}
                 </div>
                 <div className={style.addition}>Посмотреть все</div>
             </div>
@@ -91,10 +89,7 @@ export function Education() {
                     </div>
                 </div>
                 <div className={style.articleContainer}>
-                    <EducationalVideosElement open={()=>setVideoArticleWin("video")}/>
-                    <EducationalVideosElement open={()=>setVideoArticleWin("video")}/>
-                    <EducationalVideosElement open={()=>setVideoArticleWin("video")}/>
-                    <EducationalVideosElement open={()=>setVideoArticleWin("video")}/>
+                    {OBUCHENIE_VIDEO.map(el=> <EducationalVideosElement props={el} open={()=>setVideoArticleWin("video")}/>)}
                 </div>
                 <div className={style.addition}>Посмотреть все</div>
             </div>
@@ -127,12 +122,7 @@ export function Education() {
                     </div>
                 </div>
                 <div className={style.articleContainer}>
-                    <CardWebinar open={()=>setWebinarWin(true)}/>
-                    <CardWebinar open={()=>setWebinarWin(true)}/>
-                    <CardWebinar open={()=>setWebinarWin(true)}/>
-                    <CardWebinar open={()=>setWebinarWin(true)}/>
-                    <CardWebinar open={()=>setWebinarWin(true)}/>
-                    <CardWebinar open={()=>setWebinarWin(true)}/>
+                    {OBUCHENIE_WEBINAR. map(el=> <CardWebinar open={()=>setWebinarWin(true)} props={el}/>)}
                 </div>
                 <div className={style.addition}>Посмотреть все</div>
             </div>

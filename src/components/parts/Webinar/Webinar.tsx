@@ -6,6 +6,7 @@ import {RootState} from "../../../store/store.ts";
 import {NotificationWindow} from "../../windows/NotificationWindow/NotificationWindow.tsx";
 import {ButtonWebinar} from "../../buttons/ButtonWebinar/ButtonWebinar.tsx";
 import {PopupWindow} from "../../windows/PopupWindow/PopupWindow.tsx";
+import {PROSMOTR_WEBINAR} from "../../../data/10prosmotr.ts";
 
 export function Webinar({close}: {close: ()=>void}) {
     const [subscribe, setSubscribe] = useState(false)
@@ -36,28 +37,28 @@ export function Webinar({close}: {close: ()=>void}) {
                                        close={() => setWindow(false)}/>}
             <PopupWindow close={close}>
                 <div className={style.top}>
-                    <img/>
+                    <img src={`/images/${PROSMOTR_WEBINAR.photo}.jpg`}/>
                     <div className={style.info}>
-                        <div className={style.title}>Title</div>
-                        <div className={style.description}>nfghfdjgkjdghkdghdjgdfjkghdkjghfdgkdhg</div>
+                        <div className={style.title}>{PROSMOTR_WEBINAR.title}</div>
+                        <div className={style.description}>{PROSMOTR_WEBINAR.description}</div>
                     </div>
                 </div>
                 <div className={style.bottom}>
                     <div className={style.nikname}>
-                        <img/>
-                        <div>Nikname</div>
+                        <img src={`/images/${PROSMOTR_WEBINAR.nickname_photo}.jpg`}/>
+                        <div>{PROSMOTR_WEBINAR.nickname}</div>
                     </div>
                     <div className={style.buttons}>
                         <ButtonSubscribe subscribe={subscribe} setSubscribe={doSubscribe}/>
-                        <div className={style.greenButtons}>Направление дизайна</div>
-                        <div className={style.greenButtons}>Тема вебинара</div>
+                        <div className={style.greenButtons}>{PROSMOTR_WEBINAR.direction}</div>
+                        <div className={style.greenButtons}>{PROSMOTR_WEBINAR.topic}</div>
                         <div className={style.iconContainer}>
                             <img src="/calendar.svg"/>
-                            <div>12.04.2024</div>
+                            <div>{PROSMOTR_WEBINAR.data}</div>
                         </div>
                         <div className={style.iconContainer}>
                             <img src="/clock.svg"/>
-                            <div>15:00</div>
+                            <div>{PROSMOTR_WEBINAR.time}</div>
                         </div>
                         <ButtonWebinar onClick={() => signUp(condition !== "Посмотреть запись")} text={condition}/>
                     </div>

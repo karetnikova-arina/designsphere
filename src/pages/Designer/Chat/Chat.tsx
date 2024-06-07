@@ -3,18 +3,18 @@ import cn from "classnames";
 import {useEffect, useState} from "react";
 import {ChatCard} from "../../../components/Cards/ChatCard/ChatCard.tsx";
 import {Outlet} from "react-router-dom";
-import {CHATS} from "../../../data/chats.ts";
+import {CHATS_ALL} from "../../../data/15chat_all.ts";
 
 export function Chat() {
-    const [chats, setChats] = useState<typeof CHATS>([])
+    const [chats, setChats] = useState<typeof CHATS_ALL>([])
     const [inputFocus, setInputFocus] = useState(false);
     const [filter, setFilter] = useState("")
     useEffect(()=>{
         if(!filter.length){
-            setChats(CHATS)
+            setChats(CHATS_ALL)
         }else{
             let newChats = []
-            newChats = CHATS.filter((el)=> el.type===filter)
+            newChats = CHATS_ALL.filter((el)=> el.type===filter)
             setChats(newChats)
         }
     },[filter])
@@ -47,7 +47,7 @@ export function Chat() {
                         [style.chosenButton]: filter==="job"})} onClick={()=>chose("job")}>Рабочие</button>
                 </div>
                 <div className={style.chatList}>
-                    {chats.map((el)=><ChatCard text={el.lastMessage} name={el.name} id={el.id} type={el.type as "job" | "group" | "personal"} status={el.status as "received" | "send" | "read" | "unread"}/>)}
+                    {chats.map((el)=><ChatCard photo={el.photo} person_photo={el.nickname_photo} time={el.time} text={el.lastMessage} name={el.name} id={el.id} type={el.type as "job" | "group" | "personal"} status={el.status as "received" | "send" | "read" | "unread"}/>)}
                 </div>
             </div>
             <div className={style.mainWindowDialog}>

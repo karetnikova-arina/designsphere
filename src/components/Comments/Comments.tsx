@@ -1,12 +1,12 @@
 import style from "./Comments.module.scss"
 import {Comment} from "../Comment/Comment.tsx";
+import {PROSMOTR_VIDEO_COMMENTS} from "../../data/10prosmotr.ts";
 
-export function Comments() {
+export function Comments({comments}: {comments: typeof PROSMOTR_VIDEO_COMMENTS}) {
     return(
         <div className={style.comments}>
-            <div className={style.titleComments}>Комментарии <span>2</span></div>
-            <Comment text="Круто!" date="16:25" name="User1111" like={{liked: false, count: 0}}/>
-            <Comment text="Нереально!" date="15:40" name="Kriper2011" like={{liked: true, count: 2}}/>
+            <div className={style.titleComments}>Комментарии <span>{comments.length}</span></div>
+            {comments.map(el=><Comment text={el.comment} date={el.time} name={el.nickname} like={{liked: false, count: Number(el.like)}}/>)}
         </div>
     )
 }

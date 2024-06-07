@@ -1,10 +1,10 @@
 import style from "./CommentsButton.module.scss"
 
-export function CommentsButton() {
+export function CommentsButton({count}: {count:string | undefined}) {
     return(
         <div className={style.container}>
             <img src="/message.svg"/>
-            <div>123</div>
+            <div>{count}</div>
         </div>
     )
 }

@@ -13,16 +13,19 @@ export function Dialog(props: DialogProps) {
     const messagesEndRef = useRef<HTMLDivElement | null>(null);
     const [state, setState] = useState<typeof Messages | typeof GROUPMESSAGES | typeof JOBMESSAGES>([])
     const [inputValue, setInputValue] = useState("")
-    //const [image, setImage] = useState<string | null>(null);
     const fileInputRef = useRef<HTMLInputElement>(null);
+    const [personalInfo, setPersonalInfo] = useState({image: "", name: ""})
     const location = useLocation()
     useEffect(() => {
         if(props.type==="personal"){
             setState(Messages)
+            setPersonalInfo({image: "/images/2.jpg", name: "maria-fil"})
         }else if(props.type==="group"){
             setState(GROUPMESSAGES)
+            setPersonalInfo({image: "/images/44.jpg", name: "Проект SpeakerProfi"})
         }else if(props.type==="job"){
             setState(JOBMESSAGES)
+            setPersonalInfo({image: "/images/47.jpg", name: "UVI Jewellery"})
         }
     }, [location.pathname])
     useEffect(() => {
@@ -100,8 +103,9 @@ export function Dialog(props: DialogProps) {
             <div className={style.header}>
                 <div className={style.info}>
                     <div className={style.name}>
-                        <img/>
-                        <div>Nikname</div>
+                        <img src={personalInfo.image}/>
+                        <div>{personalInfo.name
+                        }</div>
                     </div>
                     {props.type === "personal" && <div>Онлайн</div>}
                     {props.type === "group" && <div>5 учасников</div>}

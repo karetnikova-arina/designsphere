@@ -2,17 +2,30 @@ import style from "./GroupTitle.module.scss"
 import cn from "classnames";
 import {useSelector} from "react-redux";
 import {RootState} from "../../store/store.ts";
-import {NavLink} from "react-router-dom";
+import {NavLink, useLocation} from "react-router-dom";
+import {useEffect, useState} from "react";
+import {SOOBSCHESTVO_GROUP1} from "../../data/11soobschestvo_group1.ts";
 
 interface GroupTitleProps {
     myGroup: boolean
 }
 export function GroupTitle(props: GroupTitleProps) {
+    const location = useLocation()
     const {group} = useSelector((s: RootState) => s.myGroup)
+    const [data, setData] = useState<typeof SOOBSCHESTVO_GROUP1 | typeof group>()
+    useEffect(()=>{
+        if(location.pathname.includes("mygroup")) {
+            setData(group)
+        }
+        else {
+            setData(SOOBSCHESTVO_GROUP1)
+        }
+        if(data)console.log(data.image)
+    },[])
     return(
         <div className={style.titleInfo}>
             <div className={style.leftInfo}>
-                {group.image ? <img src={group.image} className={style.image}/> : <div className={style.image}></div>}
+                <img src={data &&( location.pathname.includes("mygroup") ? data.image : `/images/${data.image}.jpg`)} className={style.image}/>
                 {!props.myGroup ? <button className={style.button}>
                     <img src="/subscribe.svg"/>
                     <div>Подписаться</div>
@@ -22,21 +35,21 @@ export function GroupTitle(props: GroupTitleProps) {
                 </NavLink>}
             </div>
             <div className={style.info}>
-                <div className={style.title}>{group.name}</div>
-                <div className={style.description}>{group.description}</div>
+                <div className={style.title}>{data && (data.name ?? "")}</div>
+                <div className={style.description}>{data && (data.description ?? "")}</div>
                 <div className={style.types}>
                     <div className={style.name}>Direction</div>
-                    {group.directions.map((el) => <div className={style.type}>{el}</div>)}
+                    {data && data.directions.map((el) => <div className={style.type}>{el}</div>)}
                 </div>
                 <div className={style.types}>
                     <div className={style.name}>Program</div>
-                    {group.programs.map((el) => <div className={style.type}>{el}</div>)}
+                    {data && data.programs.map((el) => <div className={style.type}>{el}</div>)}
                 </div>
                 <div className={style.types}>
                     <div className={style.creater}>Creater</div>
                     <div className={style.nikname}>
-                        <img className={style.userImg}/>
-                        <div>{group.creator}</div>
+                        <img src={data && `/images/${data.creator_photo}.jpg`} className={style.userImg}/>
+                        <div>{data && data.creator}</div>
                     </div>
                 </div>
                 <button className={cn(style.button, {

@@ -3,13 +3,14 @@ import {LikeButton} from "../../buttons/LikeButton/LikeButton.tsx";
 import {SaveButton} from "../../buttons/SaveButton/SaveButton.tsx";
 import {useState} from "react";
 import {CardImage} from "../CardImage/CardImage.tsx";
+import {SOOBSCHESTVO_GROUP1_POSTS} from "../../../data/11soobschestvo_group1.ts";
 
-export function CardProfile() {
+export function CardProfile(props: typeof SOOBSCHESTVO_GROUP1_POSTS[0]) {
     const [save, setSave] = useState(false)
     const [like, setLike] = useState(false)
     return (
         <div className={style.container}>
-            <CardImage type="profile"/>
+            <CardImage props={props} type="profile"/>
             <div className={style.information}>
                     <div className={style.stats}>
                         <div onClick={()=>setSave(prev=>!prev)}>
@@ -17,15 +18,15 @@ export function CardProfile() {
                         </div>
                         <div onClick={()=> setLike(prev=>!prev)} className={style.element}>
                             <LikeButton liked={like}/>
-                            <div>123</div>
+                            <div>{props.likes}</div>
                         </div>
                         <div className={style.element}>
                             <img className={style.stat} src="/message.svg"/>
-                            <div>123</div>
+                            <div>{props.comments}</div>
                         </div>
                         <div><img src="/send.svg"/></div>
                     </div>
-                <div className={style.date}>Сегодня в 18:23</div>
+                <div className={style.date}>{props.time}</div>
             </div>
         </div>
     )
