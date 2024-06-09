@@ -10,7 +10,7 @@ export function CardProfile(props: typeof SOOBSCHESTVO_GROUP1_POSTS[0]) {
     const [like, setLike] = useState(false)
     return (
         <div className={style.container}>
-            <CardImage props={props} type="profile"/>
+            <CardImage info={props} type="profile"/>
             <div className={style.information}>
                     <div className={style.stats}>
                         <div onClick={()=>setSave(prev=>!prev)}>

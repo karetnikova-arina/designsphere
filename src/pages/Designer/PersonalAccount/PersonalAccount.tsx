@@ -81,7 +81,7 @@ export function PersonalAccount() {
             <div className={style.portfolio}>Портфолио</div>
             {location.pathname==="/personalaccount" && <button className={style.transparentButton}>
                 <img src="/plus_blue.svg"/>
-                <div>Добавить новую работу</div>
+                <div onClick={()=>navigation("/education/publicationcreate")}>Добавить новую работу</div>
             </button>}
             <div className={style.cards}>
                 {portfolio. map(el=><CardMyGroup props={el} onClick={()=>setWindowCard(true)} type={card}/>)}

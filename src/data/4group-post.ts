@@ -7,6 +7,7 @@ export interface SOOBSCHESTVO_GROUP_POST_INTERFACE {
     likes: string,
     comments: string,
     time: string
+    save: boolean
 }
 export const SOOBSCHESTVO_GROUP_POST = [
     {
@@ -17,7 +18,8 @@ export const SOOBSCHESTVO_GROUP_POST = [
         programm: 'Figma',
         likes: '12',
         comments: '1',
-        time: '35 минут назад'
+        time: '35 минут назад',
+        save: true
     },
     {
         id: '2',
@@ -27,7 +29,8 @@ export const SOOBSCHESTVO_GROUP_POST = [
         programm: 'Figma',
         likes: '67',
         comments: '5',
-        time: 'Вчера в 11:33'
+        time: 'Вчера в 11:33',
+        save: false
     },
     {
         id: '3',
@@ -37,7 +40,8 @@ export const SOOBSCHESTVO_GROUP_POST = [
         programm: 'Tilda',
         likes: '212',
         comments: '15',
-        time: '09.04.2024'
+        time: '09.04.2024',
+        save: true
     },
     
 ]

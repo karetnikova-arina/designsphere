@@ -7,7 +7,7 @@ import {SaveButton} from "../../../components/buttons/SaveButton/SaveButton.tsx"
 import {EducationalVideosElement} from "../../../components/EducationalVideosElement/EducationalVideosElement.tsx";
 import {CardWebinar} from "../../../components/Cards/CardWebinar/CardWebinar.tsx";
 import {DIRECTION, TOPICS, WEBINARSORT} from "../../../data/sortList.ts";
-import {NavLink, useNavigate} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import {useSelector} from "react-redux";
 import {RootState} from "../../../store/store.ts";
 import {Webinar} from "../../../components/parts/Webinar/Webinar.tsx";
@@ -27,7 +27,6 @@ export function Education() {
     const [webinarWin, setWebinarWin]=useState(false)
     const [videoArticleWin, setVideoArticleWin]=useState("")
     const [development, setDevelopment] = useState(false)
-    const navigate = useNavigate()
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -67,7 +66,7 @@ export function Education() {
                             <SaveButton saved={saved}/>
                         </div>
                         <div className={style.add}><img src="/plus.svg"/>
-                            <div onClick={()=>navigate("/education/publicationcreate")}>Добавить статью</div>
+                            <div onClick={()=>setDevelopment(true)}>Добавить статью</div>
                         </div>
                     </div>
                 </div>

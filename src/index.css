@@ -26,6 +26,12 @@ body {
 button {
   font-family: 'Mulish', sans-serif;
 }
+input::placeholder {
+  font-family: 'Mulish', sans-serif;
+}
+textarea::placeholder {
+  font-family: 'Mulish', sans-serif;
+}
 a {
   text-decoration: none;
   color: var(--text-color);

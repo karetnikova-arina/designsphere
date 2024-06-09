@@ -13,7 +13,7 @@
   }
   textarea::placeholder{
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 400;
     line-height: 28px;
     color: var(--light-grey-color);
   }
@@ -64,6 +64,7 @@
   line-height: 28px;
 }
 .container {
+  width: 100%;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -169,4 +170,7 @@ input {
   font-weight: 800;
   line-height: 28px;
   background: transparent;
+}
+.relative {
+  position: relative;
 }

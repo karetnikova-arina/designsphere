@@ -127,7 +127,7 @@ export function Dialog(props: DialogProps) {
             </div>
             <div className={cn(style.inputSearch, style.sendInput)}>
                 <input value={inputValue} onChange={event => setInputValue(event.target.value)} className={style.input}
-                       placeholder="Поиск" autoFocus={true}/>
+                       placeholder="Напишите сообщение" autoFocus={true}/>
                 <img onClick={send} className={style.send} src="/sendMessage.svg"/>
                 <div onClick={handleButtonClick} className={style.file}>
                     <input className={style.hidden} ref={fileInputRef} type="file"

@@ -8,7 +8,7 @@ export function CardMyGroup({type, onClick, props}: {type: boolean, onClick: ()=
     const [liked, setLiked] = useState(false)
     return(
         <div onClick={onClick} className={style.container}>
-            <CardImage props={props} type="profile"/>
+            <CardImage info={props} type="profile"/>
             <div className={style.information}>
                 <div className={style.stats}>
                     <div onClick={()=>setLiked(prev=>!prev)} className={style.element}>

@@ -9,7 +9,7 @@ export function CardGroups(props: SOOBSCHESTVO_GROUPS_INTERFACE) {
     const [subscribe, setSubscribe] = useState(false)
     return (
         <NavLink to="/communities/group" className={style.container}>
-            <CardImage props={props} type="group"/>
+            <CardImage info={props} type="group"/>
             <div className={style.information}>
                 <ButtonSubscribe subscribe={subscribe} setSubscribe={() => setSubscribe(prev => !prev)}/>
                 <div className={style.element}>

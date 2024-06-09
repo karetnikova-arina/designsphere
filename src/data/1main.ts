@@ -6,7 +6,9 @@ export interface MAIN_PUBLICATION_INTERFACE {
     nickname_photo: string
     direction: string
     like: string
-    comments: string
+    comments: string,
+    save: boolean
+    subscribe: boolean
 }
 export const MAIN_PUBLICATION = [
     {
@@ -17,7 +19,9 @@ export const MAIN_PUBLICATION = [
         nickname_photo: '1',
         direction: 'Веб-дизайн',
         like: '56',
-        comments: '3'
+        comments: '3',
+        save: false,
+        subscribe: true
     },
     {
         id: '2',
@@ -27,7 +31,9 @@ export const MAIN_PUBLICATION = [
         nickname_photo: '2',
         direction: 'UX/UI-дизайн',
         like: '34',
-        comments: '9'
+        comments: '9',
+        save: true,
+        subscribe: false
     },
     {
         id: '3',
@@ -37,7 +43,9 @@ export const MAIN_PUBLICATION = [
         nickname_photo: '3',
         direction: 'Графический дизайн',
         like: '21',
-        comments: '4'
+        comments: '4',
+        save: false,
+        subscribe: true
     },
     {
         id: '4',
@@ -47,7 +55,9 @@ export const MAIN_PUBLICATION = [
         nickname_photo: '4',
         direction: 'UX/UI-дизайн',
         like: '17',
-        comments: '2'
+        comments: '2',
+        save: true,
+        subscribe: false
     },
     {
         id: '5',
@@ -57,7 +67,9 @@ export const MAIN_PUBLICATION = [
         nickname_photo: '5',
         direction: 'Веб-дизайн',
         like: '4',
-        comments: '0'
+        comments: '0',
+        save: false,
+        subscribe: false
     },
     {
         id: '6',
@@ -67,7 +79,10 @@ export const MAIN_PUBLICATION = [
         nickname_photo: '6',
         direction: 'Графический дизайн',
         like: '47',
-        comments: '6'
+        comments: '6',
+        save: true,
+        subscribe: false
+
     },
     {
         id: '7',
@@ -77,7 +92,9 @@ export const MAIN_PUBLICATION = [
         nickname_photo: '7',
         direction: 'Гейм-дизайн',
         like: '61',
-        comments: '8'
+        comments: '8',
+        save: false,
+        subscribe: true
     },
     {
         id: '8',
@@ -87,7 +104,9 @@ export const MAIN_PUBLICATION = [
         nickname_photo: '8',
         direction: 'UX/UI-дизайн',
         like: '44',
-        comments: '8'
+        comments: '8',
+        save: true,
+        subscribe: false
     },
     {
         id: '9',
@@ -97,7 +116,9 @@ export const MAIN_PUBLICATION = [
         nickname_photo: '9',
         direction: '3D-дизайн',
         like: '9',
-        comments: '1'
+        comments: '1',
+        save: false,
+        subscribe: true
     },
     
 ]

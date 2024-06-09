@@ -107,7 +107,8 @@ export interface OBUCHENIE_WEBINAR_INTERFACE {
     nickname: string,
     nickname_photo: string,
     data: string,
-    time: string
+    time: string,
+    save: boolean
 }
 
 export const OBUCHENIE_WEBINAR = [
@@ -120,7 +121,8 @@ export const OBUCHENIE_WEBINAR = [
         nickname: 'volgin64',
         nickname_photo: '5',
         data: '11.04.2024',
-        time: '14:00'
+        time: '14:00',
+        save: true
     },
     {
         id: '2',
@@ -131,7 +133,8 @@ export const OBUCHENIE_WEBINAR = [
         nickname: 'maria-fil',
         nickname_photo: '2',
         data: '12.04.2024',
-        time: '15:00'
+        time: '15:00',
+        save: false
     },
     {
         id: '3',
@@ -142,7 +145,8 @@ export const OBUCHENIE_WEBINAR = [
         nickname: 'eva-sv',
         nickname_photo: '8',
         data: '09.04.2024',
-        time: '15:00'
+        time: '15:00',
+        save: true
     },
 
 ]

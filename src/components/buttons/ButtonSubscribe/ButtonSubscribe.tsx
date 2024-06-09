@@ -9,7 +9,10 @@ interface ButtonSubscribeProps {
 export function ButtonSubscribe({ subscribe, setSubscribe }: ButtonSubscribeProps) {
 
     return (
-        <button onClick={(e)=>setSubscribe(e)} className={cn(style.subscribe, {
+        <button onClick={(e)=> {
+            e.preventDefault()
+            setSubscribe(e)
+        }} className={cn(style.subscribe, {
             [style.setSubscribe]: !subscribe
         })}>
             {subscribe ? (

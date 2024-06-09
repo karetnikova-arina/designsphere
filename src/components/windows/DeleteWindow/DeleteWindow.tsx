@@ -17,7 +17,7 @@ export function DeleteWindow(props: DeleteWindowProps) {
             <div className={style.text}>Вы уверены, что хотите удалить группу? Дальнейшее восстановление невозможно!</div>
             <div className={style.buttons}>
                 <button onClick={props.delete} className={style.delete}>Да, удалить</button>
-                <button onClick={props.close} className={style.save}>Нет, я передумад(а)</button>
+                <button onClick={props.close} className={style.save}>Нет, я передумал(а)</button>
             </div>
         </div>
         </>

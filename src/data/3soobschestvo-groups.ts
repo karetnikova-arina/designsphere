@@ -5,6 +5,7 @@ export interface SOOBSCHESTVO_GROUPS_INTERFACE {
     direction: string,
     programm: string,
     subscribers: string,
+    save: boolean
 }
 export const SOOBSCHESTVO_GROUPS = [
     {
@@ -14,6 +15,7 @@ export const SOOBSCHESTVO_GROUPS = [
         direction: 'Веб-дизайн',
         programm: 'Figma',
         subscribers: '123',
+        save: true
     },
     {
         id: '2',
@@ -22,6 +24,7 @@ export const SOOBSCHESTVO_GROUPS = [
         direction: 'UX/UI дизайн',
         programm: 'Figma',
         subscribers: '212',
+        save: false
     },
     {
         id: '3',
@@ -30,6 +33,7 @@ export const SOOBSCHESTVO_GROUPS = [
         direction: 'Веб-дизайн',
         programm: 'Tilda',
         subscribers: '548',
+        save: true
     },
 ]
 

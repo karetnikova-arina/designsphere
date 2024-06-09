@@ -19,7 +19,7 @@ export function CardWebinar({open, props}: {open: ()=>void, props: OBUCHENIE_WEB
     }
     return (
         <div onClick={open} className={style.container}>
-            <CardImage props={props} type="webinar"/>
+            <CardImage info={props} type="webinar"/>
             <div className={style.information}>
                 <div className={style.element}>
                     <img src={`/images/${props.nickname_photo}.jpg`} className={style.avatar}/>

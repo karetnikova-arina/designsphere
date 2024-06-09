@@ -12,6 +12,7 @@ import {myGroupActions} from "../../../store/myGroupSlice.ts";
 import {DIRECTION, PROGRAM} from "../../../data/sortList.ts";
 import {Back} from "../../../components/Back/Back.tsx";
 import {DeleteWindow} from "../../../components/windows/DeleteWindow/DeleteWindow.tsx";
+import {Info} from "../../../components/Info/Info.tsx";
 
 export function CreateGroup({type}: { type: boolean }) {
     const {group} = useSelector((s: RootState) => s.myGroup)
@@ -21,6 +22,7 @@ export function CreateGroup({type}: { type: boolean }) {
     const [image, setImage] = useState<string | null>(null);
     const fileInputRef = useRef<HTMLInputElement>(null);
     const [nameValue, setNameValue] = useState("")
+    const [showInfo, setShowInfo] = useState(false)
     const [descriptionValue, setDescriptionValue] = useState("")
     const [direction, setDirection] = useState<{ value: string, chosen: boolean }[]>([])
     const [program, setProgram] = useState<{ value: string, chosen: boolean }[]>([])
@@ -207,7 +209,10 @@ export function CreateGroup({type}: { type: boolean }) {
 
                 <RadioButton chosen={radio === "Публичная"} title="Публичная" setValue={setRadio}/>
                 <RadioButton chosen={radio === "Закрытая"} title="Закрытая" setValue={setRadio}/>
-                <img src="/info.svg"/>
+                <div className={style.relative}>
+                    <img onMouseEnter={() => setShowInfo(true)} onMouseLeave={() => setShowInfo(false)}  src="/info.svg"/>
+                    {showInfo && <Info/>}
+                </div>
                 {validation.radio && <ErrorMessage text="Поле не заполнено"/>}
             </div>
             {type ? <button className={cn(style.create, {

@@ -1,6 +1,6 @@
 import style from "./CardMain.module.scss"
 import {LikeButton} from "../../buttons/LikeButton/LikeButton.tsx";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {CardImage} from "../CardImage/CardImage.tsx";
 import {useSelector} from "react-redux";
 import {RootState} from "../../../store/store.ts";
@@ -12,23 +12,23 @@ export function CardMain({props, onClick}: {props: MAIN_PUBLICATION_INTERFACE, o
     const [window, setWindow] = useState("")
     const {jwt} = useSelector((s: RootState) => s.user)
     const click = () => {
-        console.log(jwt)
         if (!jwt.length) {
             setWindow("Чтобы оценить проект, необходимо авторизоваться")
-            console.log(jwt)
         } else {
             setLiked(prev => !prev)
-            console.log(jwt)
         }
         return false
     }
     const close = () => {
         setWindow("")
     }
+    useEffect(()=>{
+        console.log(props)
+    },[props])
     return (
-        <div onClick={onClick} className={style.container}>
+        <div className={style.container}>
             {window.length > 0 && <NotificationWindow close={close} text={window}/>}
-            <CardImage props={props} type="main"/>
+            <CardImage onClick={onClick} info={props} type="main"/>
             <div className={style.information}>
                 <div className={style.element}>
                     <img className={style.avatar} src={`images/${props.nickname_photo}.jpg`}/>
@@ -39,7 +39,10 @@ export function CardMain({props, onClick}: {props: MAIN_PUBLICATION_INTERFACE, o
                         <img className={style.stat} src="/message.svg"/>
                         <div>{props.comments}</div>
                     </div>
-                    <div onClick={click} className={style.element}>
+                    <div onClick={(e)=> {
+                        e.stopPropagation()
+                        click()
+                    }} className={style.element}>
                         <LikeButton liked={liked}/>
                         <div>{props.like}</div>
                     </div>

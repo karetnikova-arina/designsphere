@@ -18,6 +18,7 @@ export interface PORTFOLIO_INTERFACE {
     like: string
     comments: string
     data: string
+    save: boolean
 }
 
 export const PORTFOLIO = [
@@ -29,6 +30,7 @@ export const PORTFOLIO = [
         programm: 'Figma',
         like: '56',
         comments: '2',
-        data: '01.04.2024'
+        data: '01.04.2024',
+        save: false
     },
 ]

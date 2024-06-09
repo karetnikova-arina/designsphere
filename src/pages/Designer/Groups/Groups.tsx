@@ -8,7 +8,7 @@ export function Groups() {
             <div className={style.content}>
                 {SOOBSCHESTVO_GROUPS. map(el=><CardGroups {...el}/>)}
             </div>
-            <div>
+            <div className={style.recomended}>
                 <div className={style.title}>Рекомендуем</div>
                 <div className={style.content}>
                     {SOOBSCHESTVO_GROUPS_RECOMEND.map(el=> <CardGroups {...el}/>)}

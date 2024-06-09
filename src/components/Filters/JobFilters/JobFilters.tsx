@@ -5,15 +5,23 @@ import {ButtonTransperent} from "../../buttons/ButtonTransperent/ButtonTranspere
 import {useEffect, useState} from "react";
 import {SortWindow} from "../../windows/SortWindow/SortWindow.tsx";
 import {STATUS} from "../../../data/sortList.ts";
+import {useNavigate} from "react-router-dom";
 
 export function JobFilters({value, setValue}: {value: string, setValue: (value: string)=>void}) {
     const [chose, setChose] = useState(false)
     const [statusData, setStatusData] = useState<{ value: string, chosen: boolean }[]>([])
+    const navigation = useNavigate()
     useEffect(()=>{
-        const newStatus = STATUS.map((el) => ({
-            value: el,
-            chosen: false
-        }))
+        const newStatus = STATUS.map((el) => {
+            if(el==="Ищу работу") return ({
+                value: el,
+                chosen: true
+            })
+            return ({
+                value: el,
+                chosen: false
+            })
+        })
         setStatusData(newStatus)
     },[])
     const choseVal = (str: string)=>{
@@ -43,7 +51,7 @@ export function JobFilters({value, setValue}: {value: string, setValue: (value: 
                 })}><img src="/saveWhite.svg"/></button>
             </div>
             <div className={style.part}>
-                <button className={style.data}>Мои данные</button>
+                <button onClick={()=>navigation("/personalaccount/jobsearch")} className={style.data}>Мои данные</button>
                 <ButtonTransperent onClick={()=>setChose(prev=>!prev)} title="Статус" highlighting={false} chosen={chose}/>
                 {chose && <SortWindow type="one" dataProps={statusData} setValues={setStatusData} right={true} left={false}/>}
             </div>

@@ -1,7 +1,7 @@
 import style from "./CommunityUserCard.module.scss"
 import {useEffect, useState} from "react";
 import {ButtonSubscribe} from "../../buttons/ButtonSubscribe/ButtonSubscribe.tsx";
-import {NavLink, useLocation} from "react-router-dom";
+import {NavLink, useLocation, useNavigate} from "react-router-dom";
 import {useSelector} from "react-redux";
 import {RootState} from "../../../store/store.ts";
 import {NotificationWindow} from "../../windows/NotificationWindow/NotificationWindow.tsx";
@@ -9,6 +9,7 @@ import {SOOBSCHESTVO_FRIENDS_INTERFACE} from "../../../data/2soobschestvo-friend
 
 export function CommunityUserCard(props: SOOBSCHESTVO_FRIENDS_INTERFACE) {
     const location = useLocation()
+    const navigation = useNavigate()
     const [subscribe, setSubscribe] = useState(true)
     const [window, setWindow] = useState(false)
     const {jwt} = useSelector((s: RootState) => s.user)
@@ -36,7 +37,10 @@ export function CommunityUserCard(props: SOOBSCHESTVO_FRIENDS_INTERFACE) {
                         {location.pathname!=="/candidate" && <ButtonSubscribe subscribe={subscribe} setSubscribe={doSubscribe}/>}
                         <button className={style.message}>
                             <img src="/letter.svg"/>
-                            <div>Написать</div>
+                            <div onClick={e=> {
+                                e.preventDefault()
+                                navigation("/chat/personal/8")
+                            }}>Написать</div>
                         </button>
                     </div>
                 </div>

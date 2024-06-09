@@ -126,7 +126,7 @@ export function VacancyCreate() {
                             <div>от</div>
                             <input
                                 value={salaryExpectations[0]}
-                                onChange={e => setSalary(e)} name="left" placeholder="8000"/>
+                                onChange={e => setSalary(e)} name="left" placeholder="-"/>
                             <div>₽</div>
                         </div>
                         <div className={style.salary}>

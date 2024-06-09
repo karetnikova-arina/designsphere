@@ -21,7 +21,9 @@ export function RegistrationPassword({title}: { title: string }) {
     const changeValue = (event: React.ChangeEvent<HTMLInputElement>) => {
         dispatch(formActions.addValue({name: event.target.name as nameTypes, value: event.target.value}));
     };
-
+    useEffect(()=>{
+        dispatch(formActions.cleanPasswords())
+    },[])
     useEffect(() => {
         if (!isValid.password) dispatch(formActions.checkValid("password" as nameTypes));
         if (!isValid.repeatPassword) dispatch(formActions.checkValid("repeatPassword" as nameTypes));
@@ -75,7 +77,7 @@ export function RegistrationPassword({title}: { title: string }) {
                     </div>
                 )}
                 <Button isValid={values.password.length!==0 && values.repeatPassword.length!==0 && values.password===values.repeatPassword && (title === "Восстановление пароля" ? validation : checkedConditions)}>
-                    Зарегистрироваться
+                    {title !== "Восстановление пароля" ? "Зарегистрироваться" : "Войти"}
                 </Button>
             </form>
         </div>

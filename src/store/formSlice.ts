@@ -63,6 +63,11 @@ const formSlice = createSlice({
             state.values.person = action.payload
 
         },
+        cleanPasswords: (state) => {
+            state.values.password = ""
+            state.values.repeatPassword = ""
+
+        },
         checkValid: (state, action: PayloadAction<nameTypes | number >) => {
             const email = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
             const nik = /^@[\w-]{1,15}$/
