@@ -8,9 +8,7 @@ export function Community() {
     const location = useLocation()
     const navigate = useNavigate()
     useEffect(()=>{
-        console.log(location.pathname)
         if(location.pathname==="/communities") {
-            console.log(location.pathname)
             navigate("/communities/friends")
         }
     },[location])

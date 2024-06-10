@@ -107,8 +107,7 @@
 .cards {
   align-self: center;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 20px;
   flex-wrap: wrap;
+  gap: 40px;
+  width: 1250px;
 }

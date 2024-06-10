@@ -1,6 +1,6 @@
 import style from "./CardMain.module.scss"
 import {LikeButton} from "../../buttons/LikeButton/LikeButton.tsx";
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import {CardImage} from "../CardImage/CardImage.tsx";
 import {useSelector} from "react-redux";
 import {RootState} from "../../../store/store.ts";
@@ -22,9 +22,6 @@ export function CardMain({props, onClick}: {props: MAIN_PUBLICATION_INTERFACE, o
     const close = () => {
         setWindow("")
     }
-    useEffect(()=>{
-        console.log(props)
-    },[props])
     return (
         <div className={style.container}>
             {window.length > 0 && <NotificationWindow close={close} text={window}/>}

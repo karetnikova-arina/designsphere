@@ -6,7 +6,7 @@ import {NavLink} from "react-router-dom";
 import {SOOBSCHESTVO_GROUPS_INTERFACE} from "../../../data/3soobschestvo-groups.ts";
 
 export function CardGroups(props: SOOBSCHESTVO_GROUPS_INTERFACE) {
-    const [subscribe, setSubscribe] = useState(false)
+    const [subscribe, setSubscribe] = useState(props.subscribe)
     return (
         <NavLink to="/communities/group" className={style.container}>
             <CardImage info={props} type="group"/>

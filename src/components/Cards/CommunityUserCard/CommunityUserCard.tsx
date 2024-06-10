@@ -1,5 +1,5 @@
 import style from "./CommunityUserCard.module.scss"
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import {ButtonSubscribe} from "../../buttons/ButtonSubscribe/ButtonSubscribe.tsx";
 import {NavLink, useLocation, useNavigate} from "react-router-dom";
 import {useSelector} from "react-redux";
@@ -13,7 +13,6 @@ export function CommunityUserCard(props: SOOBSCHESTVO_FRIENDS_INTERFACE) {
     const [subscribe, setSubscribe] = useState(true)
     const [window, setWindow] = useState(false)
     const {jwt} = useSelector((s: RootState) => s.user)
-    useEffect(()=>console.log(`images/${props.photo}.jpg`),[])
     const doSubscribe = () => {
         if (jwt) {
             setSubscribe(prev => !prev)

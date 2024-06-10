@@ -58,7 +58,7 @@ export const JOBMESSAGES = [
         person: "me",
         type: "first",
         text: "Добрый день! Заинтересовала ваша вакансия “UX/UI дизайнер”. Готова выполнить тестовое задание",
-        date: new Date(2024, 4, 6, 23, 24, 4),
+        date: new Date(2024, 3, 2, 11, 24, 4),
         read: true
     },
     {
@@ -71,6 +71,6 @@ export const JOBMESSAGES = [
             "Прикрепите к письму c результатами тестового задания свое резюме.\n" +
             "\n" +
             "С уважением, команда UVI Jewellery",
-        date: new Date(2024, 4, 6, 23, 24, 4)
+        date: new Date(2024, 3, 2, 16, 24, 4)
     }
 ]

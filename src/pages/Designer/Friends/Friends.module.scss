@@ -1,7 +1,8 @@
 .content {
+  align-self: center;
+  max-width: 1250px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
   gap: 30px;
 }

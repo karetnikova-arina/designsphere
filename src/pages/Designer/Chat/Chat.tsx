@@ -6,6 +6,7 @@ import {Outlet} from "react-router-dom";
 import {CHATS_ALL} from "../../../data/15chat_all.ts";
 import {useSelector} from "react-redux";
 import {RootState} from "../../../store/store.ts";
+import {EMPLOYER_CHATS} from "../../../data/21employer_chats.ts";
 
 export function Chat() {
     const [chats, setChats] = useState<typeof CHATS_ALL>([])
@@ -14,9 +15,7 @@ export function Chat() {
     const {values} = useSelector((s: RootState) => s.form)
     useEffect(() => {
         if (values.person === "Работодатель") {
-            let newChats = []
-            newChats = CHATS_ALL.filter((el) => el.type === "personal")
-            setChats(newChats)
+            setChats(EMPLOYER_CHATS)
         } else {
             if (!filter.length) {
                 setChats(CHATS_ALL)

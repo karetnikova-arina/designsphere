@@ -5,7 +5,8 @@ export interface SOOBSCHESTVO_GROUPS_INTERFACE {
     direction: string,
     programm: string,
     subscribers: string,
-    save: boolean
+    save: boolean,
+    subscribe: boolean
 }
 export const SOOBSCHESTVO_GROUPS = [
     {
@@ -15,7 +16,8 @@ export const SOOBSCHESTVO_GROUPS = [
         direction: 'Веб-дизайн',
         programm: 'Figma',
         subscribers: '123',
-        save: true
+        save: true,
+        subscribe: true
     },
     {
         id: '2',
@@ -24,7 +26,8 @@ export const SOOBSCHESTVO_GROUPS = [
         direction: 'UX/UI дизайн',
         programm: 'Figma',
         subscribers: '212',
-        save: false
+        save: false,
+        subscribe: true
     },
     {
         id: '3',
@@ -33,7 +36,8 @@ export const SOOBSCHESTVO_GROUPS = [
         direction: 'Веб-дизайн',
         programm: 'Tilda',
         subscribers: '548',
-        save: true
+        save: true,
+        subscribe: true
     },
 ]
 
@@ -47,7 +51,8 @@ export const SOOBSCHESTVO_GROUPS_RECOMEND = [
         direction: 'Графический дизайн',
         programm: 'Photoshop',
         subscribers: '1261',
-        save: false
+        save: false,
+        subscribe: false
     },
     {
         id: '2-recomed',
@@ -56,7 +61,9 @@ export const SOOBSCHESTVO_GROUPS_RECOMEND = [
         direction: 'Веб-дизайн',
         programm: 'Tilda',
         subscribers: '1128',
-        save: false
+        save: false,
+        subscribe: false
+
 
     },    
     {
@@ -66,7 +73,9 @@ export const SOOBSCHESTVO_GROUPS_RECOMEND = [
         direction: 'UX/UI-дизайн',
         programm: 'Figma',
         subscribers: '912',
-        save: false
+        save: false,
+        subscribe: false
+
 
     },
     {
@@ -76,7 +85,9 @@ export const SOOBSCHESTVO_GROUPS_RECOMEND = [
         direction: 'Графический дизайн',
         programm: 'InDesign',
         subscribers: '874',
-        save: false
+        save: false,
+        subscribe: false
+
 
     },    
     {
@@ -86,7 +97,9 @@ export const SOOBSCHESTVO_GROUPS_RECOMEND = [
         direction: 'Motion-дизайн',
         programm: 'After Effects',
         subscribers: '835',
-        save: false
+        save: false,
+        subscribe: false
+
 
     },    
     {
@@ -96,7 +109,9 @@ export const SOOBSCHESTVO_GROUPS_RECOMEND = [
         direction: '3D-дизайн',
         programm: '3Ds Max',
         subscribers: '642',
-        save: false
+        save: false,
+        subscribe: false
+
 
     },
 

@@ -5,6 +5,7 @@ import {InputSearch} from "../../../components/InputSearch/InputSearch.tsx";
 import user from "../../../assets/user_admin.png"
 import {useState} from "react";
 import {CheckBoxButton} from "../../../components/buttons/CheckBoxButton/CheckBoxButton.tsx";
+import {ADMIN_PAGE} from "../../../data/22admin.ts";
 
 export function Users() {
     const [inputFocus, setInputFocus] = useState(false);
@@ -85,26 +86,16 @@ export function Users() {
                                 <th></th>
                                 <th></th>
                             </tr>
-                            <tr>
+                            {ADMIN_PAGE.map(el=> <tr>
                                 <td><CheckBoxButton/></td>
-                                <td className={style.name}><img src={user}/><div>arinaaa_kk</div></td>
-                                <td>Дизайнер</td>
-                                <td>Зарегистрирован</td>
-                                <td>2 часа назад</td>
-                                <td>12.04.2024</td>
+                                <td className={style.name}><img src={`/images/${el.photo}.jpg`}/><div>{el.name}</div></td>
+                                <td>{el.role}</td>
+                                <td>{el.status}</td>
+                                <td>{el.activity}</td>
+                                <td>{el.date}</td>
                                 <td><img src="/delete.svg"/></td>
                                 <td><img src="/pencil_blue.svg"/></td>
-                            </tr>
-                            <tr>
-                                <td><CheckBoxButton/></td>
-                                <td className={style.name}><img src={user}/><div>arinaaa_kk</div></td>
-                                <td>Дизайнер</td>
-                                <td>Зарегистрирован</td>
-                                <td>2 часа назад</td>
-                                <td>12.04.2024</td>
-                                <td><img src="/delete.svg"/></td>
-                                <td><img src="/pencil_blue.svg"/></td>
-                            </tr>
+                            </tr>)}
                         </table>
                         <div className={style.table_pages}>
                             <button className={style.button_inactive}><img src="/left.svg"/></button>

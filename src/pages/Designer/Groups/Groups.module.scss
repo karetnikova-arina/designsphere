@@ -9,9 +9,10 @@
   flex-wrap: wrap;
   gap: 30px;
   align-self: center;
-  justify-content: center
+  max-width: 1250px;
 }
 .title{
+  align-self: center;
   font-size: 32px;
   font-weight: 800;
   line-height: 40px;

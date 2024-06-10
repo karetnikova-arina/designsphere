@@ -17,12 +17,13 @@ export function Vacancy() {
     return (
         <div className={style.container}>
             <Back path="/job"/>
-            <div className={style.title}>Title</div>
+            <div className={style.title}>Web-дизайнер</div>
             <div className={style.salary}>100 000 ₽</div>
             <div className={style.pointsContainer}>
                 <div className={style.points}>1-3 года</div>
                 <div className={style.points}>Junior</div>
-                <div className={style.points}>Удаленная работа</div>
+                <div className={style.points}>Гибридный</div>
+                <div className={style.points}>Полная занятость</div>
             </div>
             <div className={style.buttonsContainer}>
                 <ResponseButton onClick={()=>chose} response={response}/>
@@ -33,7 +34,7 @@ export function Vacancy() {
             <div className={style.company}>
                 <img src="/company.svg"/>
                 <div className={style.companyInfo}>
-                    <div className={style.companyTitle}>Title</div>
+                    <div className={style.companyTitle}>Web-дизайнер</div>
                     <div className={style.address}>Москва, Веткина улица, 4</div>
                 </div>
             </div>
