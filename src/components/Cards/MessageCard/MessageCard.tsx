@@ -15,8 +15,7 @@ export function MessageCard(props: MessageCard) {
     const {values} = useSelector((s: RootState) => s.form)
     return (
         <div className={cn(style.container, {
-            [style.me]: props.person === "me" && values.person !== "Работодатель",
-            [style.me]: props.person === "you" && values.person === "Работодатель"
+            [style.me]: ((props.person === "me" && values.person !== "Работодатель") || (values.person === "Работодатель" && props.person !== "me")),
         })}>
             {props.type === "group" && props.person!=="me" && <div className={style.userName}>{props.person}</div>}
             <div className={style.text}>{props.text}</div>

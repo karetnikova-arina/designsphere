@@ -11,8 +11,8 @@ export function Footer() {
             {values.person !== "Работодатель" && <>
                 <NavLink to="/">Главная</NavLink>
                 <NavLink to="/communities/friends">Сообщество</NavLink>
-                <NavLink to="/education">Работа</NavLink>
-                <NavLink to="/job">Обучение</NavLink>
+                <NavLink to="/education">Обучение</NavLink>
+                <NavLink to="/job">Работа</NavLink>
             </>
             }
             {values.person === "Работодатель" && <>
