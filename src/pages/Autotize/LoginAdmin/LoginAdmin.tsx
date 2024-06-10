@@ -49,7 +49,7 @@ export function LoginAdmin() {
         <div className={style.container}>
             <AuthTitle title="Вход для администратора" text="" link=""/>
             <form onSubmit={(e) => submit(e)} className={style.form}>
-                <AuthElement title="Электронная почта"><Input name="email" value={email} onChange={(e) => changeValue(e)}
+                <AuthElement title="Логин"><Input name="email" value={email} onChange={(e) => changeValue(e)}
                                                               isValid={isValid.email}
                                                               placeholder="@admin"/></AuthElement>
                 <AuthElement title="Пароль"><InputPassword name="password" value={password}
