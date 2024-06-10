@@ -4,7 +4,6 @@ import {CardMain} from "../../../components/Cards/CardMain/CardMain.tsx";
 import {MAIN_PUBLICATION, MAIN_PUBLICATION_INTERFACE} from "../../../data/1main.ts";
 import {ProjectInAccount} from "../../../components/ProjectInAccount/ProjectInAccount.tsx";
 import {useEffect, useState} from "react";
-import {Navigate} from "react-router-dom";
 import {useSelector} from "react-redux";
 import {RootState} from "../../../store/store.ts";
 
@@ -22,9 +21,7 @@ export function PublicationFeed() {
         }
         setData(newData);
     }, [filter]);
-    if (values.person === "Работодатель") {
-        return <Navigate to="/vacancyemployer"/>;
-    }
+
     const changeFilter = (value: string) => {
         if (filter === value) {
             setFilter("")
