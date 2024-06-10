@@ -26,7 +26,7 @@ export function Vacancy() {
                 <div className={style.points}>Полная занятость</div>
             </div>
             <div className={style.buttonsContainer}>
-                <ResponseButton onClick={()=>chose} response={response}/>
+                <ResponseButton onClick={()=>chose()} response={response}/>
                 <div onClick={()=>setSave(prevState => !prevState)} className={style.save}>
                     <SaveButton saved={save}/>
                 </div>
@@ -84,7 +84,7 @@ export function Vacancy() {
                     Просторный и комфортный офис в шаговой доступности от метро Марьина Роща.</div>
             </div>
             <div className={style.buttonsContainer}>
-                <ResponseButton onClick={()=>chose} response={response}/>
+                <ResponseButton onClick={()=>chose()} response={response}/>
                 <div onClick={()=>setSave(prevState => !prevState)} className={style.save}>
                     <SaveButton saved={save}/>
                 </div>
