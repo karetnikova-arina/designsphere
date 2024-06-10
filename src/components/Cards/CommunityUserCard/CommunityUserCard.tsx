@@ -14,9 +14,7 @@ export function CommunityUserCard(props: SOOBSCHESTVO_FRIENDS_INTERFACE) {
     const [window, setWindow] = useState(false)
     const {jwt} = useSelector((s: RootState) => s.user)
     useEffect(()=>console.log(`images/${props.photo}.jpg`),[])
-    const doSubscribe = (e: React.MouseEvent<HTMLButtonElement>) => {
-        e.preventDefault();
-        e.stopPropagation();
+    const doSubscribe = () => {
         if (jwt) {
             setSubscribe(prev => !prev)
         }

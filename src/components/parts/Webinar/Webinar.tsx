@@ -13,9 +13,7 @@ export function Webinar({close}: {close: ()=>void}) {
     const [condition, setCondition] = useState("Записаться")
     const [window, setWindow] = useState(false)
     const {jwt} = useSelector((s: RootState) => s.user)
-    const doSubscribe = (e: React.MouseEvent<HTMLButtonElement>) => {
-        e.preventDefault();
-        e.stopPropagation();
+    const doSubscribe = () => {
         if (jwt) {
             setSubscribe(prev => !prev)
         } else {
