@@ -47,6 +47,7 @@ export const SOOBSCHESTVO_GROUPS_RECOMEND = [
         direction: 'Графический дизайн',
         programm: 'Photoshop',
         subscribers: '1261',
+        save: false
     },
     {
         id: '2-recomed',
@@ -55,6 +56,8 @@ export const SOOBSCHESTVO_GROUPS_RECOMEND = [
         direction: 'Веб-дизайн',
         programm: 'Tilda',
         subscribers: '1128',
+        save: false
+
     },    
     {
         id: '3-recomed',
@@ -63,6 +66,8 @@ export const SOOBSCHESTVO_GROUPS_RECOMEND = [
         direction: 'UX/UI-дизайн',
         programm: 'Figma',
         subscribers: '912',
+        save: false
+
     },
     {
         id: '4-recomed',
@@ -71,6 +76,8 @@ export const SOOBSCHESTVO_GROUPS_RECOMEND = [
         direction: 'Графический дизайн',
         programm: 'InDesign',
         subscribers: '874',
+        save: false
+
     },    
     {
         id: '5-recomed',
@@ -79,6 +86,8 @@ export const SOOBSCHESTVO_GROUPS_RECOMEND = [
         direction: 'Motion-дизайн',
         programm: 'After Effects',
         subscribers: '835',
+        save: false
+
     },    
     {
         id: '6-recomed',
@@ -87,6 +96,8 @@ export const SOOBSCHESTVO_GROUPS_RECOMEND = [
         direction: '3D-дизайн',
         programm: '3Ds Max',
         subscribers: '642',
+        save: false
+
     },
 
     

@@ -19,8 +19,6 @@ export function CommunityUserCard(props: SOOBSCHESTVO_FRIENDS_INTERFACE) {
         e.stopPropagation();
         if (jwt) {
             setSubscribe(prev => !prev)
-        } else {
-            setWindow(true)
         }
     }
     return (

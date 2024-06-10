@@ -38,17 +38,17 @@ export function GroupTitle(props: GroupTitleProps) {
                 <div className={style.title}>{data && (data.name ?? "")}</div>
                 <div className={style.description}>{data && (data.description ?? "")}</div>
                 <div className={style.types}>
-                    <div className={style.name}>Direction</div>
+                    <div className={style.name}>Направление</div>
                     {data && data.directions.map((el) => <div className={style.type}>{el}</div>)}
                 </div>
                 <div className={style.types}>
-                    <div className={style.name}>Program</div>
+                    <div className={style.name}>Программы</div>
                     {data && data.programs.map((el) => <div className={style.type}>{el}</div>)}
                 </div>
                 <div className={style.types}>
-                    <div className={style.creater}>Creater</div>
+                    <div className={style.creater}>Создатель группы</div>
                     <div className={style.nikname}>
-                        <img src={data && `/images/${data.creator_photo}.jpg`} className={style.userImg}/>
+                        <img src={data && `/images/42.jpg`} className={style.userImg}/>
                         <div>{data && data.creator}</div>
                     </div>
                 </div>

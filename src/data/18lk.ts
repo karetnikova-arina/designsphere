@@ -18,7 +18,8 @@ export const PORTFOLIO_LK = [
         programm: 'Figma',
         like: '212',
         comments: '2',
-        data: ""
+        data: "",
+        save: false
     },
     {
         id: '2',
@@ -28,7 +29,8 @@ export const PORTFOLIO_LK = [
         programm: 'Figma',
         like: '571',
         comments: '21',
-        data: ""
+        data: "",
+        save: false
     },
     {
         id: '3',
@@ -38,7 +40,8 @@ export const PORTFOLIO_LK = [
         programm: 'Figma',
         like: '44',
         comments: '5',
-        data: ""
+        data: "",
+        save: false
     },
     {
         id: '4',
@@ -48,7 +51,8 @@ export const PORTFOLIO_LK = [
         programm: 'Figma',
         like: '78',
         comments: '16',
-        data: ""
+        data: "",
+        save: false
     },
     {
         id: '5',
@@ -58,6 +62,7 @@ export const PORTFOLIO_LK = [
         programm: 'Figma',
         like: '64',
         comments: '10',
-        data: ""
+        data: "",
+        save: false
     },
 ]

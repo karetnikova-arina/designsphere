@@ -3,15 +3,15 @@ import cn from "classnames";
 
 interface ButtonSubscribeProps {
     subscribe: boolean;
-    setSubscribe: (e: React.MouseEvent<HTMLButtonElement>) => void;
+    setSubscribe: () => void;  // Changed to function with no parameters
 }
 
 export function ButtonSubscribe({ subscribe, setSubscribe }: ButtonSubscribeProps) {
-
     return (
-        <button onClick={(e)=> {
-            e.preventDefault()
-            setSubscribe(e)
+        <button onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            setSubscribe();  // No parameter passed here
         }} className={cn(style.subscribe, {
             [style.setSubscribe]: !subscribe
         })}>

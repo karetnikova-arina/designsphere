@@ -2,14 +2,17 @@ import style from "./PersonalAccount.module.scss"
 import {CardMyGroup} from "../../../components/Cards/CardMyGroup/CardMyGroup.tsx";
 import {NavLink, useLocation, useNavigate} from "react-router-dom";
 import {useEffect, useState} from "react";
-import {useDispatch} from "react-redux";
-import {AppDispatch} from "../../../store/store.ts";
+import {useDispatch, useSelector} from "react-redux";
+import {AppDispatch, RootState} from "../../../store/store.ts";
 import {userActions} from "../../../store/userSlice.tsx";
 import {ProjectInAccount} from "../../../components/ProjectInAccount/ProjectInAccount.tsx";
 import {PORTFOLIO, USER_PROFILE} from "../../../data/17user_profile.ts";
 import {PORTFOLIO_LK, USER_PROFILE_LK} from "../../../data/18lk.ts";
+import {ButtonSubscribe} from "../../../components/buttons/ButtonSubscribe/ButtonSubscribe.tsx";
 
 export function PersonalAccount() {
+    const [subscribe, setSubscribe] = useState(true)
+    const {jwt} = useSelector((s: RootState) => s.user)
     const navigation = useNavigate()
     const location = useLocation()
     const [card, setCard] = useState(false)
@@ -42,6 +45,11 @@ export function PersonalAccount() {
         dispatch(userActions.exit())
         navigation("/")
     }
+    const doSubscribe = () => {
+        if (jwt) {
+            setSubscribe(prev => !prev);
+        }
+    }
     return(
         <div className={style.container}>
             {windowCard && <ProjectInAccount close={() => setWindowCard(false)}/>}
@@ -72,10 +80,7 @@ export function PersonalAccount() {
                             <img src="/exit.svg"/>
                             <div>Выйти</div>
                         </button>
-                    </div> : <button className={style.blueButton}>
-                        <img src="/user_add.svg"/>
-                        <div>Подписаться</div>
-                    </button>}
+                    </div> : <ButtonSubscribe subscribe={subscribe} setSubscribe={doSubscribe} />}
                 </div>
             </div>
             <div className={style.portfolio}>Портфолио</div>

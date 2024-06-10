@@ -1,20 +1,21 @@
 import {NavLink} from "react-router-dom";
 import style from "./VacancyEmloyerCard.module.scss"
 import cn from "classnames";
+import {VACANCIES} from "../../../data/vacancyEmployer.ts";
 
-export function VacancyEmployerCard() {
+export function VacancyEmployerCard(props: typeof VACANCIES[0]) {
     return (
         <NavLink to="/job/vacancy" className={style.container}>
-            <div className={style.title}>Title</div>
-            <div className={style.salary}>Salary</div>
+            <div className={style.title}>{props.title}</div>
+            <div className={style.salary}>{props.salary}</div>
             <div className={style.row}>
-                <div className={style.highlight}>Опыт работы</div>
-                <div className={style.highlight}>Грейд</div>
-                <div className={style.highlight}>График работы</div>
+                <div className={style.highlight}>{props.dexperience}</div>
+                <div className={style.highlight}>{props.grade}</div>
+                <div className={style.highlight}>{props.timetable}</div>
             </div>
             <div className={style.row}>
-                <div className={style.nameCompany}>Название компании</div>
-                <div className={style.city}>Город</div>
+                <div className={style.nameCompany}>{props.name_company}</div>
+                <div className={style.city}>{props.city}</div>
             </div>
             <div className={style.footer}>
                 <NavLink to="/vacancyreduction">
@@ -26,11 +27,11 @@ export function VacancyEmployerCard() {
                 <div className={cn(style.element, style.allelements)}>
                     <div className={style.element}>
                         <img src="/eye_small.svg"/>
-                        <div>123</div>
+                        <div>{props.views}</div>
                     </div>
                     <div className={style.element}>
                         <img src="/saveArt.svg"/>
-                        <div>123</div>
+                        <div>{props.save}</div>
                     </div>
                 </div>
             </div>
