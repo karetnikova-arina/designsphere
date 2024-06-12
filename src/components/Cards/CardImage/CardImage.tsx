@@ -24,8 +24,10 @@ export function CardImage({ type, info, ...props }: CardImageProps) {
     const { jwt } = useSelector((s: RootState) => s.user);
 
     useEffect(() => {
-        if(!jwt) {
+        if(!jwt.length) {
             setSave(false)
+        }else {
+            setSave(info.save)
         }
     }, [info.save])
 
