@@ -24,7 +24,9 @@ export function CardImage({ type, info, ...props }: CardImageProps) {
     const { jwt } = useSelector((s: RootState) => s.user);
 
     useEffect(() => {
-        setSave(info.save)
+        if(!jwt) {
+            setSave(false)
+        }
     }, [info.save])
 
     const click = (e: React.MouseEvent<HTMLDivElement>) => {
